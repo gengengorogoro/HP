@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medistudy - 毎日通える、"医学科コーチ"と学ぶ場所</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --white: #ffffff;
+      --sand: #f5f1ed;
+      --mint: #8ab4a7;
+      --navy: #2c3e50;
+      --gold: #d4af37;
+      --text-dark: #333333;
+      --text-light: #666666;
+    }
+
+    body {
+      font-family: 'Noto Serif JP', serif;
+      line-height: 1.8;
+      color: var(--text-dark);
+      background-color: var(--white);
+    }
+
+    .en-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--mint);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--mint);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(245, 241, 237, 0.3), rgba(245, 241, 237, 0.3)), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 40px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+      line-height: 1.4;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: white;
+      margin-bottom: 50px;
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 60px;
+      font-weight: 300;
+      color: white;
+    }
+
+    /* Section Common Styles */
+    .section {
+      padding: 120px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--mint);
+      margin-bottom: 80px;
+      letter-spacing: 3px;
+      font-weight: 300;
+    }
+
+    /* Concept Section */
+    .concept {
+      background-color: var(--sand);
+    }
+
+    .concept-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .concept-text {
+      padding: 60px 0;
+    }
+
+    .concept-text h3 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+    }
+
+    .concept-text p {
+      font-size: 16px;
+      color: var(--text-light);
+      line-height: 2;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .concept-image {
+      height: 400px;
+      background-image: url("img/all.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 60px;
+      margin-top: 60px;
+    }
+
+    .service-item {
+      text-align: center;
+      padding: 60px 40px;
+      background: var(--white);
+      border: 1px solid rgba(138, 180, 167, 0.2);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .service-item:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--mint);
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--white);
+    }
+
+    .service-title {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .service-description {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* Instructors Section */
+    .instructors {
+      background-color: var(--sand);
+    }
+
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+      margin-top: 60px;
+    }
+
+    .instructor-card {
+      text-align: center;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .instructor-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      background: url('https://images.unsplash.com/photo-1559209172-91cc0d5e3db5?auto=format&fit=crop&w=300&q=80');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid var(--mint);
+    }
+
+    .instructor-name {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .instructor-title {
+      font-size: 12px;
+      color: var(--mint);
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .instructor-description {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* Space Section */
+    .space-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      margin-top: 60px;
+      height: 500px;
+    }
+
+    .gallery-main {
+      background: url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1000&q=80');
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+    }
+
+    .gallery-sub {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .gallery-item {
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+    }
+
+    .gallery-item:first-child {
+      background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .gallery-item:last-child {
+      background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80');
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--mint), rgba(138, 180, 167, 0.8));
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    .cta-description {
+      font-size: 16px;
+      margin-bottom: 50px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 20px 60px;
+      background: var(--white);
+      color: var(--mint);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 80px 0 40px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h4 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      line-height: 2;
+      font-weight: 300;
+    }
+
+    .footer-section a:hover {
+      color: var(--mint);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 0 20px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .concept-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .space-gallery {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .gallery-main {
+        height: 300px;
+      }
+
+      .gallery-sub {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: 200px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-title {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .hero-subtitle {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    .hero-description {
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo en-font">Medistudy</a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#" class="active">ホーム</a></li>
+          <li><a href="instructors.html">講師紹介</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="pricing.html">料金・プラン</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="entry.html">入塾の流れ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <h1 class="hero-title">いつもの勉強を特別に。</h1>
+      <p class="hero-subtitle en-font">Medical Student × Study</p>
+      <p class="hero-description">
+        毎日通える、"医学科コーチ"と学ぶ場所。<br>
+        あなたの可能性を、静かに、確実に、引き出します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Concept Section -->
+  <section id="concept" class="section concept">
+    <div class="container">
+      <div class="fade-in">
+        <h2 class="section-title">Medistudyとは</h2>
+        <p class="section-subtitle en-font">CONCEPT</p>
+      </div>
+      <div class="concept-content">
+        <div class="concept-text fade-in">
+          <h3>医学科コーチと共に歩む、<br>新しい学びのかたち。</h3>
+          <p>
+            私たちは「教えすぎない」ことを大切にしています。
+            現役医学部生が、あなたの思考を引き出し、
+            学ぶ力そのものを育てていく。
+          </p>
+          <p>
+            心地よい空間で、朝から夜まで、あなたのペースで。
+            毎日通いたくなる場所を、ここに。
+          </p>
+          <p>
+            一人ひとりの可能性を信じ、伴走し続けます。
+          </p>
+        </div>
+        <div class="concept-image fade-in"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="fade-in">
+        <h2 class="section-title">サービス</h2>
+        <p class="section-subtitle en-font">SERVICES</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-item fade-in">
+          <!--<div class="service-icon">📋</div>-->
+          <h3 class="service-title">学習計画サポート</h3>
+          <p class="service-description">
+            あなただけの学習戦略を、医学科コーチと一緒に設計。
+            目標から逆算した、無理のない計画で確実に成長していきます。
+          </p>
+        </div>
+        <div class="service-item fade-in">
+          <!--<div class="service-icon">💭</div>-->
+          <h3 class="service-title">質問対応</h3>
+          <p class="service-description">
+            分からないことは、その場で解決。
+            ただ答えを教えるのではなく、考える過程を大切にした
+            質の高い対話を心がけています。
+          </p>
+        </div>
+        <div class="service-item fade-in">
+          <!--<div class="service-icon">🌱</div>-->
+          <h3 class="service-title">習慣化支援</h3>
+          <p class="service-description">
+            学習を習慣にするための仕組みづくり。
+            LINEサポートや定期面談を通じて、
+            続けられる環境を整えていきます。
+          </p>
+        </div>
+          <div class="service-item fade-in">
+          <!--<div class="service-icon">🌱</div>-->
+          <h3 class="service-title">Study Cafe サポート</h3>
+          <p class="service-description">
+            "勉強カフェ"風のオシャレな雰囲気に。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors Section -->
+  <section id="instructors" class="section instructors">
+    <div class="container">
+      <div class="fade-in">
+        <h2 class="section-title">講師陣</h2>
+        <p class="section-subtitle en-font">INSTRUCTORS</p>
+      </div>
+      <div class="instructors-grid">
+        <div class="instructor-card fade-in">
+          <div class="instructor-image" style="background-image: url(img/katou.jpg)"></div>
+          <h3 class="instructor-name">加藤 朋</h3>
+          <p class="instructor-title">広島大学医学部医学科 3年</p>
+          <p class="instructor-description">
+            「一人ひとりの学習スタイルを見つけることから始めます。
+            あなたらしい学び方で、確実に成長していきましょう。」
+          </p>
+        </div>
+        <div class="instructor-card fade-in">
+          <div class="instructor-image" style="background-image: url(img/ishikawa.jpg)"></div>
+          <h3 class="instructor-name">石川 こひめ</h3>
+          <p class="instructor-title">広島大学医学部医学科 3年</p>
+          <p class="instructor-description">
+            「勉強の本質は、考える力を育てること。
+            答えを教えるより、一緒に考える時間を大切にしています。」
+          </p>
+        </div>
+        <div class="instructor-card fade-in">
+          <div class="instructor-image" style="background-image: url(img/hase.jpg)"></div>
+          <h3 class="instructor-name">長谷隼太郎</h3>
+          <p class="instructor-title">広島大学医学部医学科 2年</p>
+          <p class="instructor-description">
+            「小さな疑問も大切に。質問しやすい雰囲気づくりを心がけ、
+            安心して学べる環境をつくります。」
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Space Section -->
+  <section id="space" class="section">
+    <div class="container">
+      <div class="fade-in">
+        <h2 class="section-title">学習空間</h2>
+        <p class="section-subtitle en-font">LEARNING SPACE</p>
+      </div>
+      <div class="space-gallery fade-in">
+        <div class="gallery-main"></div>
+        <div class="gallery-sub">
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="section cta">
+    <div class="container">
+      <div class="fade-in">
+        <h2 class="cta-title">まずは、体験から。</h2>
+        <p class="cta-description">
+          あなたに合った学び方を、一緒に見つけましょう。<br>
+          無料体験のお申し込みは、LINEで簡単に。
+        </p>
+        <a href="https://lin.ee/GQDsqfQ" class="cta-button">LINEで無料体験申し込み</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4 class="en-font">Medistudy</h4>
+          <p>
+            毎日通える、"医学科コーチ"と学ぶ場所。<br>
+            あなたの可能性を、静かに、確実に、引き出します。
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>アクセス</h4>
+          <p>
+            〒730-0044<br>
+            広島県広島市中区宝町4-29第一小林ビル202<br>
+            TEL: 080-3886-1480<br>
+            営業時間: 9:00-22:00（年中無休）
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>お問い合わせ</h4>
+          <p>
+            <a href="https://lin.ee/GQDsqfQ">LINE公式アカウント</a><br>
+            <a href="https://www.instagram.com/medizero0101/">Instagram</a><br>
+            <a href="faq.html #form">お問い合わせフォーム</a><br>
+            <a href="faq.html #access">アクセス</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Medistudy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Fade in animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Header background change on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+      }
+    });
+  </script>
+</body>
+</html>
