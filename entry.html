@@ -643,6 +643,76 @@
       opacity: 1;
       transform: translateX(0);
     }
+  #nav-toggle {
+    display: none;
+  }
+
+  .icon-open {
+    display: inline; /* Or block/flex depending on SVG/font-icon usage */
+  }
+
+  .hamburger {
+    display: none; /* Shown via media query */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem; /* Ensure this is large enough for easy tapping */
+    cursor: pointer;
+    color: #000;
+    z-index: 1000;
+    background: none; /* Ensure no button-like background unless intended */
+    border: none; /* Ensure no button-like border unless intended */
+    padding: 5px; /* Increase tap target */
+  }
+
+  .icon-close {
+    display: none;
+    color: black;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Or inline-block / flex if needed */
+    }
+
+    .nav-menu {
+      top: 0;
+      bottom: auto; /* Override previous 'bottom: 0' */
+      height: 250px; /* Full viewport height for overlay */
+      background: rgba(255,255,255,0.9);
+      z-index: 500; /* Hamburger is 1000, so this is under it */
+      overflow-y: auto; /* If nav items exceed screen height */
+      /* Initially hidden, shown by #nav-toggle:checked */
+      display: none;
+    }
+
+    #nav-toggle:checked ~ nav .nav-menu { /* Show the navigation when checkbox is checked */
+        display: block;
+    }
+
+    .nav-menu {
+      /* display: none; This is handled by .navigation display:none initially */
+      flex-direction: column;
+      padding-top: 60px; /* Space for the close button or header */
+    }
+    
+    .nav-menu li {
+        flex: none; /* Reset flex grow/shrink for column layout */
+        width: 100%;
+    }
+
+    .nav-menu a {
+        padding: 20px; /* Larger tap targets for mobile */
+        font-size: 1rem; /* Increase font size for mobile nav */
+    }
+    
+    #nav-toggle:checked + .hamburger .icon-open {
+      display: none;
+    }
+    #nav-toggle:checked + .hamburger .icon-close {
+      display: inline; /* Or block/flex */
+    }
+  }
   </style>
 </head>
 <body>
@@ -650,6 +720,11 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo en-font">Medistudy</a>
+      <input type="checkbox" id="nav-toggle">
+      <label class="hamburger" for="nav-toggle">
+        <span class="icon-open">☰</span>
+        <span class="icon-close">✖</span>
+      </label>
       <nav>
         <ul class="nav-menu">
           <li><a href=index.html>ホーム</a></li>
