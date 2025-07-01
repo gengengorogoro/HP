@@ -113,7 +113,7 @@
 
     .hero-subtitle {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 24px;
       color: white;
       margin-bottom: 50px;
       font-weight: 300;
@@ -121,7 +121,7 @@
     }
 
     .hero-description {
-      font-size: 16px;
+      font-size: 24px;
       color: var(--text-light);
       margin-bottom: 60px;
       font-weight: 300;
@@ -197,7 +197,46 @@
       border-radius: 4px;
     }
 
+    /* Why Section */
+    .why {
+      background: var(--sand);
+    }
+
+    .why-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .why-item {
+      margin-bottom: 40px;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(138, 180, 167, 0.2);
+    }
+
+    .why-item:last-child {
+      border-bottom: none;
+    }
+
+    .why-item h3 {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--mint);
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .why-item p {
+      font-size: 16px;
+      color: var(--text-light);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    
     /* Services Section */
+    .service {
+      background: var(--sand);
+    }
+    
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -299,6 +338,10 @@
     }
 
     /* Space Section */
+    .space {
+      background: var(--sand);
+    }
+    
     .space-gallery {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -617,8 +660,41 @@
     </div>
   </section>
 
+  <!-- Why Section -->
+  <section class="section why">
+    <div class="container">
+      <div class="fade-in">
+        <h2 class="section-title">Medistudyってどんな塾？</h2>
+        <p class="section-subtitle en-font">ABOUT</p>
+      </div>
+      <div class="why-content">
+        <div class="why-item fade-in">
+          <h3>アクティブラーニングを軸にしています</h3>
+          <p>
+            アクティブラーニングは生徒の様々な能力を伸ばす学習法であり、文科省も推進しています。
+            ただ授業を聞くだけでなく、自ら考え、問題を解き、そして振り返ってもらうことを大事にしています。
+          </p>
+        </div>
+        <div class="why-item fade-in">
+          <h3>学習効率を最適化します</h3>
+          <p>
+            放課後の限られた時間で成績を上げていくためには高い効率の学習が必要不可欠です。
+            Medistudyでは学習効率を上げる「学習設計」を生徒と共に作り上げていきます。
+          </p>
+        </div>
+        <div class="why-item fade-in">
+          <h3>受験勉強にとらわれない学習力を育てます</h3>
+          <p>
+            大学入学後も、社会に出てからも、学ぶ姿勢は常に求められています。
+            Medistudyではそうした自ら能動的に学ぶ姿勢も育てていくことを目指します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Section -->
-  <section id="services" class="section">
+  <section id="services" class="section service">
     <div class="container">
       <div class="fade-in">
         <h2 class="section-title">サービス</h2>
@@ -703,7 +779,7 @@
   </section>
 
   <!-- Space Section -->
-  <section id="space" class="section">
+  <section id="space" class="section space">
     <div class="container">
       <div class="fade-in">
         <h2 class="section-title">学習空間</h2>
