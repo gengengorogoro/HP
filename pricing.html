@@ -729,7 +729,7 @@
           <li><a href="instructors.html">講師紹介</a></li>
           <li><a href="services.html">サービス</a></li>
           <li><a href="#" class="active">料金・プラン</a></li>
-          <li><a href="faq.html">アクセス・お問い合わせ</a></li>
+          <li><a href="faq.html">アクセス・ＦＡＱ</a></li>
           <li><a href="entry.html">入塾の流れ</a></li>
         </ul>
       </nav>
@@ -1084,6 +1084,15 @@
   </footer>
 
   <script>
+    document.getElementById('nav-toggle').addEventListener('change', function() {
+      const logo = document.querySelector('.header-container img');
+        if (this.checked) {
+          logo.style.display = 'none';
+        } else {
+          logo.style.display = 'block'; // または 'inline-block' など、元の表示スタイルに戻す
+        }
+      });
+    
     // FAQ toggle functionality
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
