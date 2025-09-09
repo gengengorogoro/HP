@@ -1217,6 +1217,14 @@
   </div>
 
   <script>
+      document.getElementById('nav-toggle').addEventListener('change', function() {
+      const logo = document.querySelector('.header-container img');
+        if (this.checked) {
+          logo.style.display = 'none';
+        } else {
+          logo.style.display = 'block'; // または 'inline-block' など、元の表示スタイルに戻す
+        }
+      });
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
