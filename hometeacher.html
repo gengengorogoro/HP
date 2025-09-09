@@ -86,7 +86,7 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(245, 241, 237, 0.3), rgba(245, 241, 237, 0.3)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80');
+      /*background: linear-gradient(rgba(245, 241, 237, 0.3), rgba(245, 241, 237, 0.3)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80');*/
       background-size: cover;
       background-position: center;
       display: flex;
@@ -741,11 +741,82 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+  #nav-toggle {
+    display: none;
+  }
+
+  .icon-open {
+    display: inline; /* Or block/flex depending on SVG/font-icon usage */
+  }
+
+  .hamburger {
+    display: none; /* Shown via media query */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem; /* Ensure this is large enough for easy tapping */
+    cursor: pointer;
+    color: #000;
+    z-index: 1000;
+    background: none; /* Ensure no button-like background unless intended */
+    border: none; /* Ensure no button-like border unless intended */
+    padding: 5px; /* Increase tap target */
+  }
+
+  .icon-close {
+    display: none;
+    color: black;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Or inline-block / flex if needed */
+    }
+
+    .nav-menu {
+      top: 0;
+      bottom: auto; /* Override previous 'bottom: 0' */
+      height: 250px; /* Full viewport height for overlay */
+      background: rgba(255,255,255,0.9);
+      z-index: 500; /* Hamburger is 1000, so this is under it */
+      overflow-y: auto; /* If nav items exceed screen height */
+      /* Initially hidden, shown by #nav-toggle:checked */
+      display: none;
+    }
+
+    #nav-toggle:checked ~ nav .nav-menu { /* Show the navigation when checkbox is checked */
+        display: block;
+    }
+
+    .nav-menu {
+      /* display: none; This is handled by .navigation display:none initially */
+      flex-direction: column;
+      padding-top: 60px; /* Space for the close button or header */
+    }
+    
+    .nav-menu li {
+        flex: none; /* Reset flex grow/shrink for column layout */
+        width: 100%;
+    }
+
+    .nav-menu a {
+        font-size: 1rem; /* Increase font size for mobile nav */
+    }
+    
+    #nav-toggle:checked + .hamburger .icon-open {
+      display: none;
+    }
+    #nav-toggle:checked + .hamburger .icon-close {
+      display: inline; /* Or block/flex */
+    }
+  }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
+    <!--
     <div class="header-container">
       <a href="#" class="logo en-font">Medistudy</a>
       <nav>
@@ -757,6 +828,27 @@
           <li><a href="faq.html">アクセス・ＦＡＱ</a></li>
           <li><a href="entry.html">入塾の流れ</a></li>
           <li><a href="#" class="active">家庭教師</a></li>
+        </ul>
+      </nav>
+    </div>
+    -->
+    <div class="header-container">
+      <img src="img/logo.png" alt="Medistudy ロゴ">
+      <a href="#" class="logo en-font">Medistudy</a>
+      <input type="checkbox" id="nav-toggle">
+      <label class="hamburger" for="nav-toggle">
+        <span class="icon-open">☰</span>
+        <span class="icon-close">✖</span>
+      </label>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">ホーム</a></li>
+          <li><a href="instructors.html">講師紹介</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="pricing.html">料金・プラン</a></li>
+          <li><a href="faq.html">アクセス・ＦＡＱ</a></li>
+          <li><a href="entry.html">入塾の流れ</a></li>
+          <li><a href="#">家庭教師</a></li>
         </ul>
       </nav>
     </div>
