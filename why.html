@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なぜ、Medistudyなのか | 広島の医学部生個別指導・学習管理型学習塾</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- BRAND DESIGN SYSTEM --- */
+        :root {
+            --c-main: #5D9B91;
+            --c-black: #111111;
+            --c-gray: #666666;
+            --c-bg: #ffffff;
+            
+            --f-serif: 'Shippori Mincho', serif;
+            --f-sans: 'Zen Kaku Gothic New', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--f-sans);
+            color: var(--c-black);
+            line-height: 2.4;
+            background-color: var(--c-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a { text-decoration: none; transition: opacity 0.3s; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 5%; position: relative; }
+
+        /* --- アニメーション定義 --- */
+        
+        /* 1. オープニング用：ゆっくりフェードイン */
+        @keyframes openFade {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 2. スクロール用：初期状態（見えない・下にいる） */
+        .scroll-trigger {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); /* 高級感のある慣性動作 */
+        }
+        
+        /* 3. スクロール用：表示状態（見える・元の位置） */
+        .scroll-trigger.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- LAYOUT --- */
+
+        /* ヘッダー */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 30px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px);
+            opacity: 0; animation: openFade 1s ease forwards 0.5s; /* ヘッダーも少し遅れて出現 */
+        }
+        .logo { font-family: var(--f-serif); font-size: 20px; font-weight: 700; color: var(--c-black); letter-spacing: 0.1em; }
+        .nav-link { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--c-black); border-bottom: 1px solid var(--c-black); padding-bottom: 3px; }
+
+        /* ページタイトルエリア */
+        .page-header {
+            padding: 220px 0 120px; text-align: center;
+            /* オープニングアニメーション適用 */
+            opacity: 0;
+            animation: openFade 2s ease forwards 0.2s; /* 2秒かけてゆっくりと */
+        }
+        .page-title-en {
+            display: block; font-size: 12px; letter-spacing: 0.2em; color: var(--c-main);
+            margin-bottom: 25px; font-weight: 700;
+        }
+        .page-title-jp {
+            font-family: var(--f-serif); font-size: 36px; font-weight: 500;
+        }
+
+        /* セクション共通 */
+        section { padding: 100px 0; position: relative; overflow: hidden; }
+        
+        /* 背景の巨大数字 */
+        .bg-number {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            font-family: var(--f-serif); font-size: 250px; color: #f4f4f4;
+            z-index: -1; line-height: 1; pointer-events: none;
+            /* 数字もふわっと出す */
+            transition: opacity 1.5s ease;
+        }
+
+        .section-h2 {
+            font-family: var(--f-serif); font-size: 28px; font-weight: 500;
+            line-height: 1.6; margin-bottom: 40px; color: var(--c-black);
+            text-align: center;
+        }
+
+        .text-body {
+            font-size: 15px; color: var(--c-gray); text-align: justify;
+            margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .text-body strong {
+            color: var(--c-black); font-weight: 700;
+            background: linear-gradient(transparent 70%, #d8e6e4 70%);
+        }
+
+        /* MESSAGE Section */
+        .message-section { background-color: #F9F8F6; margin-top: 80px; padding: 100px 0; }
+        .message-box { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+        .signer { text-align: right; margin-top: 40px; font-family: var(--f-serif); font-weight: 600; }
+
+        /* Footer */
+        footer { padding: 50px 5%; text-align: center; font-size: 12px; color: #888; border-top: 1px solid #ddd; }
+
+        /* SP対応 */
+        @media (max-width: 768px) {
+            .page-title-jp { font-size: 28px; }
+            .section-h2 { font-size: 22px; text-align: left; }
+            .bg-number { font-size: 150px; top: 20px; left: 20px; transform: none; text-align: left; }
+            .text-body { text-align: left; }
+            section { padding: 80px 0; }
+        }
+    
+        /* --- RESPONSIVE NAV (Desktop horizontal / Mobile hamburger) --- */
+        .header-right{display:flex;align-items:center;gap:22px;}
+        .nav-desktop{display:flex;align-items:center;gap:18px;}
+        .nav-item{
+            font-size:11px;font-weight:700;letter-spacing:0.1em;
+            color:var(--c-black);
+            position:relative;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+        .nav-item::after{
+            content:'';
+            position:absolute;
+            left:0;bottom:-5px;
+            width:100%;height:1px;
+            background:var(--c-black);
+            transform:scaleX(0);
+            transform-origin:left;
+            transition:0.3s;
+        }
+        .nav-item:hover::after{transform:scaleX(1);}
+        .nav-toggle{
+            display:none;
+            background:none;border:none;
+            font-family:inherit;
+            font-size:28px;
+            line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            padding:4px 8px;
+        }
+        .nav-drawer{
+            position:fixed;inset:0;
+            z-index:2000;
+            opacity:0;
+            pointer-events:none;
+            transition:opacity 0.25s ease;
+        }
+        .nav-drawer.is-open{opacity:1;pointer-events:auto;}
+        .nav-drawer__overlay{
+            position:absolute;inset:0;
+            background:rgba(0,0,0,0.35);
+        }
+        .nav-drawer__panel{
+            position:absolute;top:0;right:0;
+            width:min(340px, 86vw);
+            height:100%;
+            background:#fff;
+            transform:translateX(100%);
+            transition:transform 0.25s ease;
+            padding:26px 22px;
+            overflow-y:auto;
+            -webkit-overflow-scrolling:touch;
+        }
+        .nav-drawer.is-open .nav-drawer__panel{transform:translateX(0);}
+        .nav-close{
+            background:none;border:none;
+            font-size:28px;line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            margin-left:auto;
+            display:flex;
+            padding:6px 8px;
+        }
+        .nav-mobile{
+            margin-top:20px;
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+        .nav-mobile__item{
+            font-size:14px;
+            font-weight:700;
+            letter-spacing:0.08em;
+            color:var(--c-black);
+            padding:10px 6px;
+            border-bottom:1px solid rgba(0,0,0,0.08);
+            text-decoration:none;
+        }
+
+        @media (max-width: 768px){
+            .nav-desktop{display:none;}
+            .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        <a href="index.html" class="logo">Medistudy</a>
+        <div class="header-right">
+            <nav class="nav-desktop" aria-label="Primary">
+                <a href="index.html" class="nav-item">TOP</a>
+                <a href="character.html" class="nav-item">特長</a>
+                <a href="cost.html" class="nav-item">料金</a>
+                <a href="online.html" class="nav-item">オンライン</a>
+                <a href="home.html" class="nav-item">家庭教師</a>
+                <a href="teacher.html" class="nav-item">講師</a>
+                <a href="faq.html" class="nav-item">FAQ</a>
+                <a href="why.html" class="nav-item">WHY</a>
+                
+            </nav>
+            <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="nav-drawer" aria-expanded="false">≡</button>
+        </div>
+    </header>
+
+
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__overlay" data-nav-close></div>
+        <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+            <button class="nav-close" type="button" aria-label="閉じる" data-nav-close>×</button>
+            <nav class="nav-mobile" aria-label="Mobile Primary">
+                <a href="index.html" class="nav-mobile__item">TOP</a>
+                <a href="character.html" class="nav-mobile__item">特長</a>
+                <a href="cost.html" class="nav-mobile__item">料金</a>
+                <a href="online.html" class="nav-mobile__item">オンライン</a>
+                <a href="home.html" class="nav-mobile__item">家庭教師</a>
+                <a href="teacher.html" class="nav-mobile__item">講師</a>
+                <a href="faq.html" class="nav-mobile__item">FAQ</a>
+                <a href="why.html" class="nav-mobile__item">WHY</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <span class="page-title-en">WHY MEDISTUDY</span>
+        <h1 class="page-title-jp">なぜ、Medistudyなのか</h1>
+    </div>
+
+    <section class="scroll-trigger">
+        <span class="bg-number">01</span>
+        <div class="container">
+            <h2 class="section-h2">
+                成績が伸びるのは、<br>
+                「自習」の時間だけ。
+            </h2>
+            <div class="text-body">
+                <p>
+                    授業を聞いて「わかったつもり」になっても、偏差値は上がりません。<br>
+                    成績が伸びるのは、自分の手で問題を解き、悩み、答えにたどり着いた時だけです。
+                </p>
+                <p style="margin-top: 30px;">
+                    だから私たちは、<strong>授業の質はもちろん、それ以外の「自学自習の時間」の管理を徹底し、学習の質を上げることに全力を注いでいます。</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scroll-trigger">
+        <span class="bg-number">02</span>
+        <div class="container">
+            <h2 class="section-h2">
+                「量」と「質」。<br>
+                両方揃って、<br>
+                初めて成績は伸びる。
+            </h2>
+            <div class="text-body">
+                <p>
+                    合格の方程式は、<strong>「学習の量（管理）」×「学習の質（指導）」</strong>です。<br>
+                    どちらか一つでも欠ければ、結果は出ません。
+                </p>
+                <p style="margin-top: 20px;">
+                    「管理」だけでは、わからない問題で手が止まる。<br>
+                    「指導」だけでは、演習不足で定着しない。
+                </p>
+                <p style="margin-top: 20px;">
+                    この2つの穴を同時に埋めるのが、Medistudyの仕組みです。<br>
+                    正しい計画で走り、深い指導で壁を越える。だから、最短で伸びます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scroll-trigger">
+        <span class="bg-number">03</span>
+        <div class="container">
+            <h2 class="section-h2">
+                医学部生の「当たり前」を、<br>
+                あなたの基準にする。
+            </h2>
+            <div class="text-body">
+                <p>
+                    彼らは、誰よりも「正しい努力」を積み重ねてきた合格の体現者です。<br>
+                    教えるのは、単なる解法だけではありません。
+                </p>
+                <p style="margin-top: 20px;">
+                    「どこまでやるべきか」というゴール設定と、<br>
+                    「どう考えるべきか」という思考プロセス。
+                </p>
+                <p style="margin-top: 30px;">
+                    <strong>医学部生が泥臭く努力して手に入れた「基準」を、あなたの学習の基準に変えていきます。</strong><br>
+                    最高の環境に身を置いて、常に勉強をすることが合格への近道です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="message-section scroll-trigger">
+        <div class="container message-box">
+            <h2 class="section-h2" style="font-size:24px;">
+                「受験」という経験を、<br>
+                人生を切り拓く「自信」に。
+            </h2>
+            <div class="text-body">
+                <p>
+                    私自身、もともとは成績が良い人間ではありませんでした。<br>
+                    多くの失敗をし、色々な工夫と努力を重ね、二年の浪人を経てようやく、「学習の本質」と「本当に伸びるために必要なこと」にたどり着くことができました。
+                </p>
+                <p style="margin-top: 20px;">
+                    私はその経験と学びのすべてを、少しでも多くの生徒に還元したいと思っています。
+                </p>
+                <p style="margin-top: 20px;">
+                    <strong>正しい学習法と、十分な努力の量。</strong><br>
+                    この2つがあれば、誰にでも可能性があると断言できます。
+                </p>
+                <p style="margin-top: 20px;">
+                    もう、一人で悩まないでください。<br>
+                    私たちと一緒に、最高の結果を掴み取りましょう。
+                </p>
+            </div>
+            <div class="signer">Medistudy 代表</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 20px;">Medistudy</div>
+        <p>© Medistudy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 監視の設定
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // 画面内に入ったらクラスを付与
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.15 // 要素が15%見えたら発火
+            });
+
+            // .scroll-triggerを持つ要素すべてを監視
+            document.querySelectorAll('.scroll-trigger').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+
+<script>
+(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.getElementById('nav-drawer');
+  if (!toggle || !drawer) return;
+
+  const closeButtons = drawer.querySelectorAll('[data-nav-close]');
+  const links = drawer.querySelectorAll('a');
+
+  const setState = (open) => {
+    drawer.classList.toggle('is-open', open);
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle.addEventListener('click', () => {
+    const willOpen = !drawer.classList.contains('is-open');
+    setState(willOpen);
+  });
+
+  closeButtons.forEach((el) => el.addEventListener('click', () => setState(false)));
+  links.forEach((a) => a.addEventListener('click', () => setState(false)));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setState(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setState(false);
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コース・料金 | Medistudy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- BRAND DESIGN SYSTEM --- */
+        :root {
+            --c-main: #5D9B91;       /* ブランドカラー */
+            --c-main-light: #e8f3f1; /* ブランドカラー（薄） */
+            --c-black: #111111;      /* 漆黒 */
+            --c-gray: #555555;       /* グレー */
+            --c-bg: #ffffff;         /* 背景 */
+            --c-sand: #F9F8F6;       /* サンドベージュ */
+            
+            --f-serif: 'Shippori Mincho', serif;
+            --f-sans: 'Zen Kaku Gothic New', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--f-sans);
+            color: var(--c-black);
+            line-height: 2.2;
+            background-color: var(--c-bg);
+            /* 背景にうっすらとした幾何学パターンを追加 */
+            background-image: radial-gradient(var(--c-main-light) 1px, transparent 1px);
+            background-size: 40px 40px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 0 5%; position: relative; }
+        
+        /* Animation */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+        .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+        
+        /* Header */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 30px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo { font-family: var(--f-serif); font-size: 22px; font-weight: 700; color: var(--c-black); letter-spacing: 0.05em; }
+        .nav-link { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--c-black); position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background: var(--c-black); transform: scaleX(0); transition: 0.3s; }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        /* Page Title */
+        .page-header { padding: 200px 0 100px; text-align: center; background: linear-gradient(to bottom, #fff, rgba(255,255,255,0)); }
+        .page-title-en { display: block; font-size: 13px; letter-spacing: 0.2em; color: var(--c-main); margin-bottom: 20px; font-weight: 700; }
+        .page-title-jp { font-family: var(--f-serif); font-size: 42px; font-weight: 600; letter-spacing: 0.05em; }
+        .page-desc { font-size: 16px; color: var(--c-gray); margin-top: 30px; font-weight: 500; }
+
+        /* --- PLAN SECTION --- */
+        .plan-section { padding: 100px 0; position: relative; }
+        /* セクションごとに背景色を少し変えてリズムを作る */
+        .section-bg-sand { background-color: rgba(249, 248, 246, 0.8); }
+
+        .plan-category-header { text-align: center; margin-bottom: 60px; }
+        .plan-cat-en { display: block; font-size: 12px; color: var(--c-main); letter-spacing: 0.1em; font-weight: 700; margin-bottom: 15px; }
+        .plan-category { font-family: var(--f-serif); font-size: 28px; font-weight: 600; color: var(--c-black); margin-bottom: 20px; }
+        .plan-cat-desc { font-size: 14px; color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Card Design V2 */
+        .plan-card {
+            background: #fff; border-radius: 12px; padding: 50px; margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .plan-card:hover { box-shadow: 0 20px 50px rgba(93, 155, 145, 0.15); transform: translateY(-5px); }
+
+        /* Recommended Style V2 (Stronger Emphasis) */
+        .plan-card.recommended {
+            background: var(--c-main-light); /* 背景色を薄いブランドカラーに */
+            border: 2px solid var(--c-main);
+            box-shadow: 0 20px 50px rgba(93, 155, 145, 0.2);
+        }
+        .badge {
+            position: absolute; top: 30px; right: -30px; background: var(--c-main); color: #fff;
+            font-size: 12px; font-weight: 700; padding: 8px 40px; letter-spacing: 0.1em;
+            transform: rotate(45deg); /* リボン風に斜め配置 */
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .plan-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 20px; }
+        .plan-name { font-family: var(--f-serif); font-size: 24px; font-weight: 700; }
+        
+        .plan-price { text-align: right; }
+        .price-val { font-family: var(--f-serif); font-size: 40px; font-weight: 600; color: var(--c-black); letter-spacing: -0.02em; }
+        .price-unit { font-size: 13px; color: var(--c-gray); font-weight: 500; margin-left: 5px; }
+
+        .plan-features { list-style: none; font-size: 15px; }
+        .plan-features li { margin-bottom: 12px; display: flex; align-items: baseline; }
+        .plan-features li::before { content: "✔"; color: var(--c-main); margin-right: 12px; font-size: 14px; font-weight: bold; flex-shrink: 0; }
+
+        /* Accordion V2 */
+        details { margin-top: 30px; }
+        summary {
+            cursor: pointer; font-size: 14px; font-weight: 700; color: var(--c-main);
+            list-style: none; text-align: center; border: 2px solid var(--c-main);
+            padding: 15px; border-radius: 50px; /* 丸みのあるボタンに */
+            transition: 0.3s; display: block; width: 100%; max-width: 300px; margin: 0 auto;
+            position: relative;
+        }
+        summary:hover { background: var(--c-main); color: #fff; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "+"; font-size: 16px; margin-left: 10px; }
+        details[open] summary::after { content: "-"; }
+        
+        .detail-content {
+            margin-top: 30px; padding: 40px; background: #fff; border-radius: 12px;
+            font-size: 14px; color: #444; animation: fadeIn 0.6s ease;
+            box-shadow: inset 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .detail-h4 { font-family: var(--f-serif); font-weight: 600; font-size: 16px; margin-bottom: 15px; color: var(--c-main); display: block; }
+        .detail-list { list-style: none; }
+        .detail-list li { position: relative; padding-left: 2em; margin-bottom: 10px; line-height: 1.8; }
+        .detail-list li::before { content: ""; position: absolute; left: 0; top: 0.8em; width: 6px; height: 6px; background: var(--c-main); border-radius: 50%; }
+        .detail-note { font-size: 12px; color: #888; margin-top: 20px; line-height: 1.8; border-top: 1px solid #eee; padding-top: 15px; }
+
+        /* Footer */
+        footer { padding: 80px 5%; text-align: center; font-size: 12px; color: #888; background: var(--c-sand); }
+
+        /* SP Responsive */
+        @media (max-width: 768px) {
+            .page-title-jp { font-size: 32px; }
+            .plan-header { flex-direction: column; gap: 15px; align-items: flex-start; }
+            .plan-price { text-align: left; }
+            .price-val { font-size: 36px; }
+            .plan-card { padding: 30px 25px; }
+            .detail-content { padding: 25px; }
+            .plan-category { font-size: 24px; }
+            .badge { top: 20px; right: -35px; font-size: 10px; padding: 5px 35px; }
+        }
+    
+        /* --- RESPONSIVE NAV (Desktop horizontal / Mobile hamburger) --- */
+        .header-right{display:flex;align-items:center;gap:22px;}
+        .nav-desktop{display:flex;align-items:center;gap:18px;}
+        .nav-item{
+            font-size:11px;font-weight:700;letter-spacing:0.1em;
+            color:var(--c-black);
+            position:relative;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+        .nav-item::after{
+            content:'';
+            position:absolute;
+            left:0;bottom:-5px;
+            width:100%;height:1px;
+            background:var(--c-black);
+            transform:scaleX(0);
+            transform-origin:left;
+            transition:0.3s;
+        }
+        .nav-item:hover::after{transform:scaleX(1);}
+        .nav-toggle{
+            display:none;
+            background:none;border:none;
+            font-family:inherit;
+            font-size:28px;
+            line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            padding:4px 8px;
+        }
+        .nav-drawer{
+            position:fixed;inset:0;
+            z-index:2000;
+            opacity:0;
+            pointer-events:none;
+            transition:opacity 0.25s ease;
+        }
+        .nav-drawer.is-open{opacity:1;pointer-events:auto;}
+        .nav-drawer__overlay{
+            position:absolute;inset:0;
+            background:rgba(0,0,0,0.35);
+        }
+        .nav-drawer__panel{
+            position:absolute;top:0;right:0;
+            width:min(340px, 86vw);
+            height:100%;
+            background:#fff;
+            transform:translateX(100%);
+            transition:transform 0.25s ease;
+            padding:26px 22px;
+            overflow-y:auto;
+            -webkit-overflow-scrolling:touch;
+        }
+        .nav-drawer.is-open .nav-drawer__panel{transform:translateX(0);}
+        .nav-close{
+            background:none;border:none;
+            font-size:28px;line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            margin-left:auto;
+            display:flex;
+            padding:6px 8px;
+        }
+        .nav-mobile{
+            margin-top:20px;
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+        .nav-mobile__item{
+            font-size:14px;
+            font-weight:700;
+            letter-spacing:0.08em;
+            color:var(--c-black);
+            padding:10px 6px;
+            border-bottom:1px solid rgba(0,0,0,0.08);
+            text-decoration:none;
+        }
+
+        @media (max-width: 768px){
+            .nav-desktop{display:none;}
+            .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        <a href="index.html" class="logo">Medistudy</a>
+        <div class="header-right">
+            <nav class="nav-desktop" aria-label="Primary">
+                <a href="index.html" class="nav-item">TOP</a>
+                <a href="character.html" class="nav-item">特長</a>
+                <a href="cost.html" class="nav-item">料金</a>
+                <a href="online.html" class="nav-item">オンライン</a>
+                <a href="home.html" class="nav-item">家庭教師</a>
+                <a href="teacher.html" class="nav-item">講師</a>
+                <a href="faq.html" class="nav-item">FAQ</a>
+                <a href="why.html" class="nav-item">WHY</a>
+                
+            </nav>
+            <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="nav-drawer" aria-expanded="false">≡</button>
+        </div>
+    </header>
+
+
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__overlay" data-nav-close></div>
+        <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+            <button class="nav-close" type="button" aria-label="閉じる" data-nav-close>×</button>
+            <nav class="nav-mobile" aria-label="Mobile Primary">
+                <a href="index.html" class="nav-mobile__item">TOP</a>
+                <a href="character.html" class="nav-mobile__item">特長</a>
+                <a href="cost.html" class="nav-mobile__item">料金</a>
+                <a href="online.html" class="nav-mobile__item">オンライン</a>
+                <a href="home.html" class="nav-mobile__item">家庭教師</a>
+                <a href="teacher.html" class="nav-mobile__item">講師</a>
+                <a href="faq.html" class="nav-mobile__item">FAQ</a>
+                <a href="why.html" class="nav-mobile__item">WHY</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="page-header fade-up">
+        <span class="page-title-en">COURSE & PRICE</span>
+        <h1 class="page-title-jp">コース・料金</h1>
+        <p class="page-desc">
+            必要なのは「授業」と「管理」。<br>
+            今の君に最適なプランを選んでください。
+        </p>
+    </div>
+
+    <section class="plan-section section-bg-sand fade-up">
+        <div class="container">
+            <div class="plan-category-header">
+                <span class="plan-cat-en">LEARNING MANAGEMENT PLAN</span>
+                <h2 class="plan-category">学習管理プラン</h2>
+                <p class="plan-cat-desc">
+                    授業なし。<br class="sp-only">医学部生常駐の自習室と毎日の管理で、<br>
+                    学習習慣を確立します。
+                </p>
+            </div>
+
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">A. 自立学習コース</h3>
+                    <div class="plan-price">
+                        <span class="price-val">35,000</span>
+                        <span class="price-unit">円/月 (税込)</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li>365日 自習室利用（7:00〜22:00）</li>
+                    <li>毎日集団個別指導（平日夕方〜夜の質問対応）</li>
+                </ul>
+                <details>
+                    <summary>こんな人におすすめ</summary>
+                    <div class="detail-content">
+                        <span class="detail-h4">TARGET</span>
+                        <ul class="detail-list">
+                            <li>自分で勉強を進められるが、集中できる環境が欲しい人。</li>
+                            <li>家ではサボってしまうので、強制力が欲しい人。</li>
+                            <li>わからない時にすぐ質問できる環境が欲しい人。</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">B. 学習マネジメントコース</h3>
+                    <div class="plan-price">
+                        <span class="price-val">45,000</span>
+                        <span class="price-unit">円/月 (税込)</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li>365日 自習室利用 ＋ 毎日集団個別指導</li>
+                    <li><strong>週1回 学習戦略面談</strong>（志望校からの逆算・計画作成）</li>
+                    <li>担当講師によるLINEサポート</li>
+                </ul>
+                <details>
+                    <summary>こんな人におすすめ</summary>
+                    <div class="detail-content">
+                        <span class="detail-h4">TARGET</span>
+                        <ul class="detail-list">
+                            <li>自分で計画を立てることができない人。</li>
+                            <li>何から勉強をしたらいいかわからない人。</li>
+                            <li>勉強の習慣化ができていない人。</li>
+                            <li>中高一貫校に通っているが、計画的に勉強ができていない人。</li>
+                            <li>ゆくゆくは自分で計画を立て、習慣化できるようになりたい人。</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="plan-section fade-up">
+        <div class="container">
+            <div class="plan-category-header">
+                <span class="plan-cat-en">INSTRUCTION & MANAGEMENT PLAN</span>
+                <h2 class="plan-category">指導 × 管理プラン</h2>
+                <p class="plan-cat-desc">
+                    管理に加え、医学部生の「完全個別指導」を追加。<br>
+                    Medistudyの真価を発揮する推奨プランです。
+                </p>
+            </div>
+
+            <div class="plan-card recommended">
+                <div class="badge">RECOMMENDED</div>
+                <div class="plan-header">
+                    <h3 class="plan-name" style="color:var(--c-main); font-size:26px;">C. 個別指導×学習管理コース</h3>
+                    <div class="plan-price">
+                        <span class="price-val" style="color:var(--c-main); font-size:46px;">55,000</span>
+                        <span class="price-unit">円/月 (税込)</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li>365日 自習室利用 ＋ 毎日集団個別指導</li>
+                    <li>LINEによるサポート</li>
+                    <li><strong>週1回 完全個別指導（90分）</strong></li>
+                    <li><strong>全教科対応。その時々に必要な科目を柔軟に指導。</strong></li>
+                    <li>学習計画作成</li>
+                </ul>
+                <details>
+                    <summary style="background:var(--c-main); color:#fff; border:none;">こんな人におすすめ</summary>
+                    <div class="detail-content" style="background:#fff;">
+                        <span class="detail-h4">TARGET</span>
+                        <ul class="detail-list">
+                            <li>学習管理だけでなく、個別指導でしっかりと「苦手」や「得意」を伸ばしたい人。</li>
+                            <li><strong>受験をする年（中３・高3・既卒）の生徒。</strong></li>
+                            <li>今の成績から逆転合格を狙いたい人。</li>
+                            <li>Medistudyの標準スタイルで、バランスよく進めたい人。</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">D. 医学部、難関大受験コース</h3>
+                    <div class="plan-price">
+                        <span class="price-val">70,000</span>
+                        <span class="price-unit">円/月 (税込)</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li>365日 自習室利用 ＋ 毎日集団個別指導</li>
+                    <li><strong>週2回 完全個別指導（90分 × 2コマ）</strong></li>
+                    <li>圧倒的な演習量と指導時間を確保</li>
+                </ul>
+                <details>
+                    <summary>こんな人におすすめ</summary>
+                    <div class="detail-content">
+                        <span class="detail-h4">TARGET</span>
+                        <ul class="detail-list">
+                            <li>医学部医学科、旧帝大など、最難関を目指す人。</li>
+                            <li>浪人生など、時間をかけてでも確実に成果を上げたい人。</li>
+                            <li>費用をかけてでも、最高レベルの環境と指導ですべてを懸けたい人。</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="plan-section section-bg-sand fade-up">
+        <div class="container">
+            <div class="plan-category-header">
+                <span class="plan-cat-en">OTHER PLANS</span>
+                <h2 class="plan-category" style="font-size:24px;">その他プラン</h2>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+                <div class="plan-card" style="margin-bottom:0;">
+                    <div class="plan-header" style="border-bottom:none; padding-bottom:0; margin-bottom:20px;">
+                        <h3 class="plan-name" style="font-size:20px;">E. 学習習慣・他塾併用コース</h3>
+                        <div class="plan-price">
+                            <span class="price-val" style="font-size:32px;">25,000</span>
+                            <span class="price-unit">円/月 (税込)</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>週2回 集団個別指導利用（平日の指定日）</li>
+                        <li>土日どちらか 自習室利用</li>
+                    </ul>
+                    <details>
+                        <summary style="padding:10px; font-size:13px;">こんな人におすすめ</summary>
+                        <div class="detail-content" style="padding:20px;">
+                            <ul class="detail-list" style="font-size:13px;">
+                                <li>部活が忙しくて毎日は通えない高1・高2生。</li>
+                                <li>他の集団塾に通っているが、質問ができる自習環境が欲しい中高生。</li>
+                                <li>いきなり毎日通うのはハードルが高いので、まずは週3回ペースから始めたい人。</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="plan-card" style="margin-bottom:0;">
+                    <div class="plan-header" style="border-bottom:none; padding-bottom:0; margin-bottom:20px;">
+                        <h3 class="plan-name" style="font-size:20px;">F. 中学受験・個別コース</h3>
+                        <div class="plan-price">
+                            <span class="price-val" style="font-size:32px;">24,000</span>
+                            <span class="price-unit">円/月 (税込)</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>月4回 完全個別指導（90分）</li>
+                        <li>指導日のみ 自習室利用可能</li>
+                    </ul>
+                    <details>
+                        <summary style="padding:10px; font-size:13px;">こんな人におすすめ</summary>
+                        <div class="detail-content" style="padding:20px;">
+                            <ul class="detail-list" style="font-size:13px;">
+                                <li>広大附属、広島学院、修道、ノートルダム清心など中学受験を目指す小学生。</li>
+                                <li>塾を通われている方で、ニガテ対策や、フォローアップをしたい人。</li>
+                            </ul>
+                            <div class="detail-note">
+                                ※当塾の講師は有名中学出身が大半です。<br>
+                                ※その他の小中高生でも個別指導だけを希望の方も受講可能です。
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 25px; font-size: 24px;">Medistudy</div>
+        <p style="margin-bottom:10px;">※入会金・教材費等は別途お問い合わせください。</p>
+        <p>※表示価格はすべて税込です。</p>
+        <p style="margin-top:30px; font-size:11px; letter-spacing:0.1em;">© Medistudy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
+    </script>
+
+
+<script>
+(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.getElementById('nav-drawer');
+  if (!toggle || !drawer) return;
+
+  const closeButtons = drawer.querySelectorAll('[data-nav-close]');
+  const links = drawer.querySelectorAll('a');
+
+  const setState = (open) => {
+    drawer.classList.toggle('is-open', open);
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle.addEventListener('click', () => {
+    const willOpen = !drawer.classList.contains('is-open');
+    setState(willOpen);
+  });
+
+  closeButtons.forEach((el) => el.addEventListener('click', () => setState(false)));
+  links.forEach((a) => a.addEventListener('click', () => setState(false)));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setState(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setState(false);
+  });
+})();
+</script>
+
+</body>
+</html>

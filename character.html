@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特長 | Medistudy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- BRAND DESIGN SYSTEM --- */
+        :root {
+            --c-main: #5D9B91;       /* ブランドカラー */
+            --c-black: #111111;      /* 漆黒 */
+            --c-gray: #555555;       /* グレー */
+            --c-bg: #ffffff;         /* 背景 */
+            --c-sand: #F9F8F6;       /* サンドベージュ */
+            
+            --f-serif: 'Shippori Mincho', serif;
+            --f-sans: 'Zen Kaku Gothic New', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--f-sans);
+            color: var(--c-black);
+            line-height: 2.2;
+            background-color: var(--c-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a { text-decoration: none; transition: opacity 0.3s; }
+        img { width: 100%; height: auto; display: block; border-radius: 2px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 5%; position: relative; }
+
+        /* --- ANIMATION SETTINGS --- */
+        
+        /* 1. オープニング演出（タイトルだけ出す） */
+        .hero-section {
+            height: 80vh; /* 画面の80%を使ってタイトルだけ見せる */
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; animation: fadeUp 1.5s ease forwards 0.3s;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 2. スクロール演出（下からふわっと） */
+        .scroll-trigger {
+            opacity: 0; transform: translateY(50px);
+            transition: all 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-trigger.is-visible { opacity: 1; transform: translateY(0); }
+
+
+        /* --- LAYOUT --- */
+
+        /* Header */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 30px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px);
+            opacity: 0; animation: fadeUp 1s ease forwards 1s; /* タイトルの後に出現 */
+        }
+        .logo { font-family: var(--f-serif); font-size: 20px; font-weight: 700; color: var(--c-black); letter-spacing: 0.1em; }
+        .nav-link { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--c-black); border-bottom: 1px solid var(--c-black); padding-bottom: 3px; }
+
+        /* Page Title */
+        .page-title-en { font-size: 12px; letter-spacing: 0.2em; color: var(--c-main); margin-bottom: 20px; font-weight: 700; display: block; }
+        .page-title-jp { font-family: var(--f-serif); font-size: 40px; font-weight: 500; text-align: center; }
+
+        /* Feature Content */
+        .feature-block { padding: 80px 0; margin-bottom: 60px; }
+        .feature-head { text-align: center; margin-bottom: 50px; }
+        .feature-num { display: block; font-family: var(--f-serif); font-size: 16px; color: var(--c-main); margin-bottom: 15px; font-weight: 700; }
+        .feature-title { font-family: var(--f-serif); font-size: 30px; font-weight: 500; line-height: 1.6; margin-bottom: 20px; }
+        .feature-sub { font-size: 16px; font-weight: 700; color: var(--c-black); margin-bottom: 30px; display: inline-block; background: linear-gradient(transparent 70%, #d8e6e4 70%); }
+        
+        .feature-body { font-size: 15px; color: var(--c-gray); text-align: justify; max-width: 700px; margin: 0 auto 50px; }
+        .feature-img-box { max-width: 800px; margin: 0 auto; box-shadow: 20px 20px 0 var(--c-sand); }
+
+        /* Comparison Table */
+        .comparison-section { background-color: var(--c-sand); padding: 100px 0; }
+        .comp-title { text-align: center; font-family: var(--f-serif); font-size: 28px; margin-bottom: 60px; }
+        .comp-table-wrapper { overflow-x: auto; }
+        .comp-table { width: 100%; min-width: 800px; border-collapse: collapse; background: #fff; }
+        .comp-table th, .comp-table td { padding: 20px 15px; text-align: center; border-bottom: 1px solid #eee; font-size: 13px; vertical-align: middle; }
+        .comp-table th { background: #f4f4f4; font-weight: 700; color: var(--c-gray); width: 15%; }
+        
+        .col-medi { background: rgba(93, 155, 145, 0.08); border-left: 2px solid var(--c-main); border-right: 2px solid var(--c-main); width: 25%; }
+        .col-medi-head { background: var(--c-main) !important; color: #fff !important; font-size: 18px; padding: 25px 0; }
+        .highlight { color: var(--c-main); font-weight: 700; font-size: 15px; }
+
+        /* Equation (Conclusion) */
+        .equation-section { padding: 120px 0; text-align: center; background: #fff; }
+        .equation-box { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; align-items: center; }
+        .eq-item { font-family: var(--f-serif); font-size: 24px; font-weight: 700; border: 1px solid #ccc; padding: 20px 40px; display: inline-block; width: 100%; max-width: 400px; }
+        .eq-x { font-size: 24px; color: #ccc; }
+        .eq-result { font-family: var(--f-serif); font-size: 32px; color: var(--c-main); font-weight: 700; margin-top: 20px; }
+        .eq-desc { margin-top: 40px; font-size: 15px; color: var(--c-gray); }
+
+        /* Footer */
+        footer { padding: 50px 5%; text-align: center; font-size: 12px; color: #888; border-top: 1px solid #ddd; }
+
+        /* SP Responsive */
+        @media (max-width: 768px) {
+            .hero-section { height: 60vh; }
+            .page-title-jp { font-size: 32px; }
+            .feature-title { font-size: 24px; text-align: left; }
+            .feature-sub { font-size: 14px; }
+            .feature-head { text-align: left; }
+            .feature-body { text-align: left; }
+            .feature-img-box { box-shadow: 10px 10px 0 var(--c-sand); }
+            
+            .comp-table th, .comp-table td { font-size: 11px; padding: 15px 5px; }
+            .col-medi-head { font-size: 14px; }
+        }
+    
+        /* --- RESPONSIVE NAV (Desktop horizontal / Mobile hamburger) --- */
+        .header-right{display:flex;align-items:center;gap:22px;}
+        .nav-desktop{display:flex;align-items:center;gap:18px;}
+        .nav-item{
+            font-size:11px;font-weight:700;letter-spacing:0.1em;
+            color:var(--c-black);
+            position:relative;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+        .nav-item::after{
+            content:'';
+            position:absolute;
+            left:0;bottom:-5px;
+            width:100%;height:1px;
+            background:var(--c-black);
+            transform:scaleX(0);
+            transform-origin:left;
+            transition:0.3s;
+        }
+        .nav-item:hover::after{transform:scaleX(1);}
+        .nav-toggle{
+            display:none;
+            background:none;border:none;
+            font-family:inherit;
+            font-size:28px;
+            line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            padding:4px 8px;
+        }
+        .nav-drawer{
+            position:fixed;inset:0;
+            z-index:2000;
+            opacity:0;
+            pointer-events:none;
+            transition:opacity 0.25s ease;
+        }
+        .nav-drawer.is-open{opacity:1;pointer-events:auto;}
+        .nav-drawer__overlay{
+            position:absolute;inset:0;
+            background:rgba(0,0,0,0.35);
+        }
+        .nav-drawer__panel{
+            position:absolute;top:0;right:0;
+            width:min(340px, 86vw);
+            height:100%;
+            background:#fff;
+            transform:translateX(100%);
+            transition:transform 0.25s ease;
+            padding:26px 22px;
+            overflow-y:auto;
+            -webkit-overflow-scrolling:touch;
+        }
+        .nav-drawer.is-open .nav-drawer__panel{transform:translateX(0);}
+        .nav-close{
+            background:none;border:none;
+            font-size:28px;line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            margin-left:auto;
+            display:flex;
+            padding:6px 8px;
+        }
+        .nav-mobile{
+            margin-top:20px;
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+        .nav-mobile__item{
+            font-size:14px;
+            font-weight:700;
+            letter-spacing:0.08em;
+            color:var(--c-black);
+            padding:10px 6px;
+            border-bottom:1px solid rgba(0,0,0,0.08);
+            text-decoration:none;
+        }
+
+        @media (max-width: 768px){
+            .nav-desktop{display:none;}
+            .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        <a href="index.html" class="logo">Medistudy</a>
+        <div class="header-right">
+            <nav class="nav-desktop" aria-label="Primary">
+                <a href="index.html" class="nav-item">TOP</a>
+                <a href="character.html" class="nav-item">特長</a>
+                <a href="cost.html" class="nav-item">料金</a>
+                <a href="online.html" class="nav-item">オンライン</a>
+                <a href="home.html" class="nav-item">家庭教師</a>
+                <a href="teacher.html" class="nav-item">講師</a>
+                <a href="faq.html" class="nav-item">FAQ</a>
+                <a href="why.html" class="nav-item">WHY</a>
+                
+            </nav>
+            <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="nav-drawer" aria-expanded="false">≡</button>
+        </div>
+    </header>
+
+
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__overlay" data-nav-close></div>
+        <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+            <button class="nav-close" type="button" aria-label="閉じる" data-nav-close>×</button>
+            <nav class="nav-mobile" aria-label="Mobile Primary">
+                <a href="index.html" class="nav-mobile__item">TOP</a>
+                <a href="character.html" class="nav-mobile__item">特長</a>
+                <a href="cost.html" class="nav-mobile__item">料金</a>
+                <a href="online.html" class="nav-mobile__item">オンライン</a>
+                <a href="home.html" class="nav-mobile__item">家庭教師</a>
+                <a href="teacher.html" class="nav-mobile__item">講師</a>
+                <a href="faq.html" class="nav-mobile__item">FAQ</a>
+                <a href="why.html" class="nav-mobile__item">WHY</a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero-section">
+        <span class="page-title-en">FEATURES</span>
+        <h1 class="page-title-jp">Medistudyの特長</h1>
+    </section>
+
+    <div class="container">
+        
+        <div class="feature-block scroll-trigger">
+            <div class="feature-head">
+                <span class="feature-num">01. INSTRUCTOR</span>
+                <h2 class="feature-title">
+                    講師は全員、<br class="sp-only">広島大学医学部医学科生。
+                </h2>
+                <span class="feature-sub">「天才」ではありません。「正しい努力」のプロです。</span>
+                <div class="feature-body">
+                    <p>
+                        「医学部生＝元から頭が良い」という誤解を否定させてください。<br>
+                        私たちにあるのは才能ではなく、膨大な試行錯誤の末に、泥臭く壁を乗り越えてきた「経験」だけです。
+                    </p>
+                    <p style="margin-top:20px;">
+                        天才ではないからこそ、君の「わからない」に寄り添い、再現性の高い「勝ち方」を教えることができます。<br>
+                        私たちは誰よりも本気で向き合います。君が壁を突破する、その日まで。
+                    </p>
+                </div>
+            </div>
+            <div class="feature-img-box">
+                <img src="img/ch_2.jpg" alt="講師陣">
+            </div>
+        </div>
+
+        <div class="feature-block scroll-trigger">
+            <div class="feature-head">
+                <span class="feature-num">02. STYLE</span>
+                <h2 class="feature-title">
+                    「個別指導」×「学習管理」。
+                </h2>
+                <span class="feature-sub">「授業だけ」で終わる常識を覆す。</span>
+                <div class="feature-body">
+                    <p>
+                        どれだけ良い授業を受けても、それを使いこなす「復習」ができなければ、成績は1ミリも上がりません。<br>
+                        多くの塾は「教えて終わり」ですが、Medistudyは違います。
+                    </p>
+                    <ul style="margin-top:20px; list-style:none;">
+                        <li><strong>✅ 質の高い個別指導：</strong> 医学部生が「なぜ？」を突き詰め、本質を理解させる。</li>
+                        <li><strong>✅ 徹底した学習管理：</strong> 毎日の自習と復習を完全管理し、定着させる。</li>
+                    </ul>
+                    <p style="margin-top:20px;">
+                        「インプット（授業）」と「アウトプット（演習）」。<br>
+                        この両輪が揃うからこそ、結果が出ます。
+                    </p>
+                </div>
+            </div>
+            <div class="feature-img-box">
+                <img src="img/ch_1.jpg" alt="指導スタイル">
+            </div>
+        </div>
+
+        <div class="feature-block scroll-trigger">
+            <div class="feature-head">
+                <span class="feature-num">03. ENVIRONMENT</span>
+                <h2 class="feature-title">
+                    365日使える、<br class="sp-only">医学部生常駐の自習室。
+                </h2>
+                <span class="feature-sub">「脳に負荷がかかる時間」を最大化する。</span>
+                <div class="feature-body">
+                    <p>
+                        成績が伸びる瞬間。それは授業中ではなく、自分で悩み、脳に負荷をかけて問題を解いている時だけです。<br>
+                        その「自学自習の質」を高めるために、最高の環境を用意しました。
+                    </p>
+                    <ul style="margin-top:20px; list-style:none;">
+                        <li><strong>✅ 365日 7:00〜22:00 開放</strong></li>
+                        <li><strong>✅ 医学部生が常駐し、いつでも質問ができる</strong></li>
+                        <li><strong>✅ ドリンク、糖分補給を完備</strong></li>
+                    </ul>
+                    <p style="margin-top:20px;">
+                        いつでも好きな時に没頭し、わからなければその場で解決する。<br>
+                        このサイクルがあるから、最短で伸びるのです。
+                    </p>
+                </div>
+            </div>
+            <div class="feature-img-box">
+                <img src="img/ch_3.jpg" alt="自習室">
+            </div>
+        </div>
+
+    </div>
+
+    <section class="comparison-section scroll-trigger">
+        <div class="container">
+            <h2 class="comp-title">他塾との違い</h2>
+            <div class="comp-table-wrapper">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th class="col-medi-head">Medistudy</th>
+                            <th>一般的な<br>個別指導</th>
+                            <th>大手<br>予備校</th>
+                            <th>管理型<br>学習塾</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>講師の質</th>
+                            <td class="col-medi highlight">全員が<br>広大医学部生</td>
+                            <td>学生バイト<br>(レベル不問)</td>
+                            <td>プロ講師</td>
+                            <td>学生バイト<br>（レベル不問）</td>
+                        </tr>
+                        <tr>
+                            <th>指導内容</th>
+                            <td class="col-medi highlight">指導 × 管理</td>
+                            <td>教えるだけ</td>
+                            <td>一方的な授業</td>
+                            <td>管理だけ<br>(教えない)</td>
+                        </tr>
+                        <tr>
+                            <th>自習室<br>質問対応</th>
+                            <td class="col-medi highlight">医学部生常駐<br>即解決</td>
+                            <td>できない<br>ことが多い</td>
+                            <td>予約制・不可</td>
+                            <td>できない<br>ことが多い</td>
+                        </tr>
+                        <tr>
+                            <th>開館時間</th>
+                            <td class="col-medi highlight">365日<br>7:00〜22:00</td>
+                            <td>時間が短い<br>休みあり</td>
+                            <td>21時閉館など</td>
+                            <td>10:00〜22:00<br>など</td>
+                        </tr>
+                        <tr>
+                            <th>目的</th>
+                            <td class="col-medi highlight">「合格」させる</td>
+                            <td>「わかる」まで</td>
+                            <td>カリキュラム<br>消化</td>
+                            <td>「やらせる」まで</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="equation-section scroll-trigger">
+        <div class="container">
+            <h2 class="comp-title" style="margin-bottom:40px;">すべて揃っているから、成績が伸びる。</h2>
+            
+            <div class="equation-box">
+                <div class="eq-item">徹底した学習管理</div>
+                <div class="eq-x">×</div>
+                <div class="eq-item">質の高い個別指導</div>
+                <div class="eq-x">×</div>
+                <div class="eq-item">圧倒的な演習量</div>
+                
+                <div class="eq-result">＝ 成績が伸びる</div>
+                
+                <p class="eq-desc">
+                    「授業」だけでも、「管理」だけでも足りない。<br>
+                    この3つを高次元で掛け合わせることで、<br>
+                    あなたの合格を「偶然」から「必然」に変えます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 20px;">Medistudy</div>
+        <p>© Medistudy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-trigger').forEach(el => observer.observe(el));
+        });
+    </script>
+
+
+<script>
+(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.getElementById('nav-drawer');
+  if (!toggle || !drawer) return;
+
+  const closeButtons = drawer.querySelectorAll('[data-nav-close]');
+  const links = drawer.querySelectorAll('a');
+
+  const setState = (open) => {
+    drawer.classList.toggle('is-open', open);
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle.addEventListener('click', () => {
+    const willOpen = !drawer.classList.contains('is-open');
+    setState(willOpen);
+  });
+
+  closeButtons.forEach((el) => el.addEventListener('click', () => setState(false)));
+  links.forEach((a) => a.addEventListener('click', () => setState(false)));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setState(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setState(false);
+  });
+})();
+</script>
+
+</body>
+</html>

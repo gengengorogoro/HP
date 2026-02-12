@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ・FAQ | Medistudy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- BRAND DESIGN SYSTEM (V2 Unified) --- */
+        :root {
+            --c-main: #5D9B91;       /* ブランドカラー */
+            --c-main-light: #e8f3f1; /* 薄いブランドカラー */
+            --c-black: #111111;      /* 漆黒 */
+            --c-gray: #555555;       /* グレー */
+            --c-bg: #ffffff;         /* 背景 */
+            --c-sand: #F9F8F6;       /* サンドベージュ */
+            --c-line: #06C755;       /* LINEカラー */
+            
+            --f-serif: 'Shippori Mincho', serif;
+            --f-sans: 'Zen Kaku Gothic New', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--f-sans);
+            color: var(--c-black);
+            line-height: 2.2;
+            background-color: var(--c-bg);
+            background-image: radial-gradient(var(--c-main-light) 1px, transparent 1px);
+            background-size: 40px 40px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 5%; position: relative; }
+        
+        /* Animation */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+        .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+        
+        /* Header */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 30px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo { font-family: var(--f-serif); font-size: 22px; font-weight: 700; color: var(--c-black); letter-spacing: 0.05em; text-decoration: none; }
+        .nav-link { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--c-black); position: relative; text-decoration: none; }
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background: var(--c-black); transform: scaleX(0); transition: 0.3s; }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        /* Page Title */
+        .page-header { padding: 200px 0 80px; text-align: center; background: linear-gradient(to bottom, #fff, rgba(255,255,255,0)); }
+        .page-title-en { display: block; font-size: 13px; letter-spacing: 0.2em; color: var(--c-main); margin-bottom: 20px; font-weight: 700; }
+        .page-title-jp { font-family: var(--f-serif); font-size: 42px; font-weight: 600; letter-spacing: 0.05em; }
+        .page-desc { font-size: 16px; color: var(--c-gray); margin-top: 30px; font-weight: 500; }
+
+        /* --- FAQ SECTION --- */
+        .faq-section { padding: 60px 0 100px; }
+        .faq-category-title { 
+            font-family: var(--f-serif); font-size: 22px; font-weight: 700; 
+            margin: 60px 0 30px; border-left: 4px solid var(--c-main); padding-left: 15px; 
+            color: var(--c-black);
+        }
+        
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; }
+        .faq-question {
+            width: 100%; text-align: left; padding: 20px 0; background: none; border: none;
+            font-family: var(--f-sans); font-size: 16px; font-weight: 700; color: var(--c-black);
+            cursor: pointer; position: relative; display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question::before { content: "Q."; color: var(--c-main); font-family: var(--f-serif); font-size: 20px; margin-right: 15px; }
+        .faq-toggle { font-size: 20px; transition: transform 0.3s; color: var(--c-main); }
+        
+        .faq-answer {
+            display: none; padding: 0 0 30px 40px; color: var(--c-gray); font-size: 14px; text-align: justify;
+            line-height: 1.8; animation: fadeIn 0.3s ease;
+        }
+        .faq-answer::before { content: "A."; color: var(--c-black); font-family: var(--f-serif); font-weight: 700; font-size: 20px; margin-right: 15px; float: left; margin-left: -40px; }
+        
+        .faq-answer.is-open { display: block; }
+        .faq-question.is-active .faq-toggle { transform: rotate(45deg); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+
+        /* --- CONTACT SECTION --- */
+        .contact-section { background: var(--c-sand); padding: 100px 0; }
+        .contact-card {
+            background: #fff; padding: 80px 60px; border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05); text-align: center;
+            max-width: 700px; margin: 0 auto;
+        }
+        .section-title { font-family: var(--f-serif); font-size: 28px; margin-bottom: 30px; }
+        .contact-lead { font-size: 16px; margin-bottom: 50px; color: #555; line-height: 2.4; }
+
+        /* LINE Button */
+        .btn-line {
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: var(--c-line); color: #fff; text-decoration: none;
+            width: 100%; max-width: 400px; padding: 20px; border-radius: 50px;
+            font-weight: 700; font-size: 18px; letter-spacing: 0.05em;
+            box-shadow: 0 10px 20px rgba(6, 199, 85, 0.2); transition: 0.3s;
+            margin-bottom: 25px;
+        }
+        .btn-line:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(6, 199, 85, 0.3); background-color: #05b54d; }
+
+        .line-icon { margin-right: 10px; font-size: 24px; }
+
+        /* --- ACCESS SECTION --- */
+        .access-section { padding: 100px 0; text-align: center; }
+        .map-box {
+            width: 100%; height: 400px; background: #eee; margin-top: 40px; border-radius: 8px;
+            overflow: hidden;
+        }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
+        
+        .access-info { margin-top: 40px; font-size: 15px; line-height: 2.2; color: var(--c-black); }
+        .access-label { font-weight: 700; color: var(--c-main); margin-right: 10px; }
+
+        /* Footer */
+        footer { padding: 80px 5%; text-align: center; font-size: 12px; color: #888; background: #fff; border-top: 1px solid #eee; }
+
+        /* SP Responsive */
+        @media (max-width: 768px) {
+            .page-title-jp { font-size: 32px; }
+            .contact-card { padding: 40px 20px; }
+            .faq-question { font-size: 14px; }
+            .map-box { height: 250px; }
+            .btn-line { font-size: 16px; width: 100%; }
+        }
+    
+        /* --- RESPONSIVE NAV (Desktop horizontal / Mobile hamburger) --- */
+        .header-right{display:flex;align-items:center;gap:22px;}
+        .nav-desktop{display:flex;align-items:center;gap:18px;}
+        .nav-item{
+            font-size:11px;font-weight:700;letter-spacing:0.1em;
+            color:var(--c-black);
+            position:relative;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+        .nav-item::after{
+            content:'';
+            position:absolute;
+            left:0;bottom:-5px;
+            width:100%;height:1px;
+            background:var(--c-black);
+            transform:scaleX(0);
+            transform-origin:left;
+            transition:0.3s;
+        }
+        .nav-item:hover::after{transform:scaleX(1);}
+        .nav-toggle{
+            display:none;
+            background:none;border:none;
+            font-family:inherit;
+            font-size:28px;
+            line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            padding:4px 8px;
+        }
+        .nav-drawer{
+            position:fixed;inset:0;
+            z-index:2000;
+            opacity:0;
+            pointer-events:none;
+            transition:opacity 0.25s ease;
+        }
+        .nav-drawer.is-open{opacity:1;pointer-events:auto;}
+        .nav-drawer__overlay{
+            position:absolute;inset:0;
+            background:rgba(0,0,0,0.35);
+        }
+        .nav-drawer__panel{
+            position:absolute;top:0;right:0;
+            width:min(340px, 86vw);
+            height:100%;
+            background:#fff;
+            transform:translateX(100%);
+            transition:transform 0.25s ease;
+            padding:26px 22px;
+            overflow-y:auto;
+            -webkit-overflow-scrolling:touch;
+        }
+        .nav-drawer.is-open .nav-drawer__panel{transform:translateX(0);}
+        .nav-close{
+            background:none;border:none;
+            font-size:28px;line-height:1;
+            cursor:pointer;
+            color:var(--c-black);
+            margin-left:auto;
+            display:flex;
+            padding:6px 8px;
+        }
+        .nav-mobile{
+            margin-top:20px;
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+        .nav-mobile__item{
+            font-size:14px;
+            font-weight:700;
+            letter-spacing:0.08em;
+            color:var(--c-black);
+            padding:10px 6px;
+            border-bottom:1px solid rgba(0,0,0,0.08);
+            text-decoration:none;
+        }
+
+        @media (max-width: 768px){
+            .nav-desktop{display:none;}
+            .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        <a href="index.html" class="logo">Medistudy</a>
+        <div class="header-right">
+            <nav class="nav-desktop" aria-label="Primary">
+                <a href="index.html" class="nav-item">TOP</a>
+                <a href="character.html" class="nav-item">特長</a>
+                <a href="cost.html" class="nav-item">料金</a>
+                <a href="online.html" class="nav-item">オンライン</a>
+                <a href="home.html" class="nav-item">家庭教師</a>
+                <a href="teacher.html" class="nav-item">講師</a>
+                <a href="faq.html" class="nav-item">FAQ</a>
+                <a href="why.html" class="nav-item">WHY</a>
+                
+            </nav>
+            <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="nav-drawer" aria-expanded="false">≡</button>
+        </div>
+    </header>
+
+
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__overlay" data-nav-close></div>
+        <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+            <button class="nav-close" type="button" aria-label="閉じる" data-nav-close>×</button>
+            <nav class="nav-mobile" aria-label="Mobile Primary">
+                <a href="index.html" class="nav-mobile__item">TOP</a>
+                <a href="character.html" class="nav-mobile__item">特長</a>
+                <a href="cost.html" class="nav-mobile__item">料金</a>
+                <a href="online.html" class="nav-mobile__item">オンライン</a>
+                <a href="home.html" class="nav-mobile__item">家庭教師</a>
+                <a href="teacher.html" class="nav-mobile__item">講師</a>
+                <a href="faq.html" class="nav-mobile__item">FAQ</a>
+                <a href="why.html" class="nav-mobile__item">WHY</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="page-header fade-up">
+        <span class="page-title-en">CONTACT & FAQ</span>
+        <h1 class="page-title-jp">お問い合わせ・FAQ</h1>
+        <p class="page-desc">
+            まずは、疑問や不安を解消してください。<br>
+            どんな些細なことでも、丁寧にお答えします。
+        </p>
+    </div>
+
+    <section class="faq-section fade-up">
+        <div class="container">
+            
+            <h2 class="faq-category-title">全コース共通</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>医学部志望ではないですが、入塾できますか？</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    はい、もちろんです。Medistudyには、広島大学（非医学部）、県立広島大学、修道大学、難関私大などを目指す生徒も多く在籍しています。「正しい学習計画」や「効率的な暗記法」は、志望校に関わらず共通です。医学部生講師が、あなたの志望校に合わせた戦略を立てますのでご安心ください。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>入塾前に体験授業や相談はできますか？</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    はい、「無料学習相談」を実施しています。単なる説明会ではなく、あなたの現状（成績・志望校）をヒアリングし、「今、何が足りないか」という戦略を具体的にお話しします。ご希望であれば体験授業も可能です。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>途中でコースを変更することはできますか？</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    はい、月単位で変更可能です。「普段はオンラインで、夏休みだけ通塾する」「最初は家庭教師で、慣れたらオンラインにする」といった柔軟な使い方も可能です。
+                </div>
+            </div>
+
+            <h2 class="faq-category-title">通塾（教室）について</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>自習室に質問できる先生はいついますか？</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    平日の夕方から夜にかけて常駐しています。一般的な自習室のように「静かにするだけ」の場所ではなく、「疑問を即解決できる場所」です。手を挙げていただければ、その場ですぐに解説します。
+                </div>
+            </div>
+
+            <h2 class="faq-category-title">オンラインコースについて</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>地方に住んでいますが、受講できますか？</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    はい、全国どこからでも受講可能です。ZoomとLINEを使用し、対面と変わらないクオリティで指導・管理を行います。機材の接続テストも行いますので、機械が苦手な方でもご安心ください。
+                </div>
+            </div>
+
+            <h2 class="faq-category-title">家庭教師コースについて</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>交通費はかかりますか？</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    はい、講師の移動にかかる実費（公共交通機関など）をご負担いただきます。基本的には広島大学（霞キャンパス）からの移動となります。詳細な金額の目安は、無料相談の際にお伝えいたします。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>不登校の期間が長く、勉強についていけるか不安です。</span>
+                    <span class="faq-toggle">＋</span>
+                </button>
+                <div class="faq-answer">
+                    大丈夫です。生徒さんのペースに合わせて進めます。まずは「勉強に向かう習慣」を作るところから始め、自信を取り戻すことを最優先に指導します。年齢の近い医学部生が、良き理解者としてサポートします。
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section fade-up" id="form">
+        <div class="container">
+            <div class="contact-card">
+                <h2 class="section-title">お問い合わせ・無料学習相談</h2>
+                <p class="contact-lead">
+                    「勉強のやり方がわからない」「志望校に届くか不安」<br>
+                    そんな悩みがあれば、まずは私たちに話してください。<br>
+                    Medistudyは、公式LINEにてお問い合わせを受け付けています。<br>
+                    無理な勧誘は一切しません。現状を変えるための「きっかけ」を作ります。
+                </p>
+
+                <a href="#" class="btn-line">
+                    公式LINEを友達追加する
+                </a>
+
+                <p style="font-size:13px; color:#555; line-height:1.8;">
+                    友達追加後、自動メッセージが届きます。<br>
+                    <strong>「無料相談を希望」「体験授業を受けたい」</strong>など、<br>
+                    ご希望の内容をメッセージでお送りください。<br>
+                    担当の医学部生講師が直接お返事いたします。
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="access-section fade-up">
+        <div class="container">
+            <h2 class="section-title">Access</h2>
+            <p>教室へのアクセス</p>
+            
+            <div class="access-info">
+                <strong>Medistudy</strong>（メディスタディ）<br>
+                〒730-0044 広島県広島市中区宝町4-29 第一小林ビル202<br>
+                <br>
+                <span class="access-label">最寄り駅</span><br>
+                ・バス停「宝町北」より徒歩1分（フジグラン広島近く）<br>
+                ・広電「比治山橋」電停より徒歩約8分<br>
+            </div>
+
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3292.355157144933!2d132.46387067645152!3d34.39175739971876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa210214c7769%3A0xc3b5e4c6c0c2c2c2!2z44CSNzMwLTAwNDQg5bqD5bO255yM5bqD5bO25biC5Lit5Yy65a6d55S677yU4oiS77yS77yZIOesrOS4gOWwj-aenOODk-ODqyAyMDI!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 25px; font-size: 24px;">Medistudy</div>
+        <p style="margin-top:30px; font-size:11px; letter-spacing:0.1em;">© Medistudy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Scroll Animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            // FAQ Accordion
+            const questions = document.querySelectorAll('.faq-question');
+            questions.forEach(q => {
+                q.addEventListener('click', () => {
+                    q.classList.toggle('is-active');
+                    const answer = q.nextElementSibling;
+                    answer.classList.toggle('is-open');
+                });
+            });
+        });
+    </script>
+
+
+<script>
+(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.getElementById('nav-drawer');
+  if (!toggle || !drawer) return;
+
+  const closeButtons = drawer.querySelectorAll('[data-nav-close]');
+  const links = drawer.querySelectorAll('a');
+
+  const setState = (open) => {
+    drawer.classList.toggle('is-open', open);
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle.addEventListener('click', () => {
+    const willOpen = !drawer.classList.contains('is-open');
+    setState(willOpen);
+  });
+
+  closeButtons.forEach((el) => el.addEventListener('click', () => setState(false)));
+  links.forEach((a) => a.addEventListener('click', () => setState(false)));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setState(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setState(false);
+  });
+})();
+</script>
+
+</body>
+</html>
