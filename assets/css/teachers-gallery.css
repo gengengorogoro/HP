@@ -1,0 +1,239 @@
+/* 講師陣：トップ・特徴と配色、見出し、ナビ、ノートを共用する。 */
+.gallery-instructors .instructors-hero{max-width:1132px;margin-inline:auto;padding:30px 6% 0;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:0 64px}
+.gallery-instructors .instructors-breadcrumb{font-family:var(--sans);font-size:12px;margin-bottom:36px}
+.gallery-instructors .instructors-hero-heading{text-align:center;margin-bottom:46px}
+.gallery-instructors .instructors-hero-heading .section-label{justify-content:center;font-family:var(--font);font-size:25px;font-weight:500;color:var(--ink);margin-bottom:28px}
+.gallery-instructors .instructors-hero-heading .section-label>span{font-family:var(--sans);font-size:14px}
+.gallery-instructors .instructors-hero h1{font-size:clamp(38px,4.6vw,66px);font-weight:500;line-height:1.6;letter-spacing:.035em}
+.gallery-instructors .instructors-hero-photo{align-self:center;height:auto;overflow:visible;background:transparent;width:100%;max-width:440px}
+.gallery-instructors .instructors-hero-photo picture{display:block;aspect-ratio:4/3;overflow:hidden;animation:gallery-photo-open 1.65s var(--ease) .15s both}
+.gallery-instructors .instructors-hero-photo img{object-position:center;animation:gallery-photo-settle 1.65s var(--ease) .15s both}
+.gallery-instructors .instructors-hero-photo:after{display:none}
+.gallery-instructors .instructors-hero-photo figcaption{position:static;color:var(--muted);font-family:var(--sans);font-size:13px;margin-top:15px}
+.gallery-instructors .instructors-hero-copy{padding:0;border:0}
+.gallery-instructors .instructors-affiliation{font-family:var(--font);font-size:30px;font-weight:500;line-height:1.7}
+.gallery-instructors .instructors-affiliation>span{font-size:17px}
+.gallery-instructors .instructors-hero-lead{font-family:var(--sans);font-size:16px;line-height:2.1;max-width:28em;margin-top:24px}
+.gallery-instructors .instructors-count{margin-top:25px;padding-top:16px;gap:4px 24px}
+.gallery-instructors .instructors-count>span:first-child{font-family:var(--sans);font-size:104px;line-height:1.2;font-weight:500;letter-spacing:-.04em}
+.gallery-instructors .instructors-count small{font-size:40px;color:var(--ink);font-weight:400}
+.gallery-instructors .instructors-count>span:last-child{font-family:var(--font);font-size:20px;color:var(--ink);font-weight:500}
+.gallery-instructors .instructors-hero-copy>.text-link{margin-top:10px;font-size:15px;padding-top:14px}
+.gallery-instructors .instructors-hero-bottom{font-family:var(--sans);font-size:13px;padding:30px 0 35px}
+.gallery-instructors .instructors-index{max-width:1180px;margin:auto;padding:0 30px;border-bottom:1px solid var(--line)}
+.gallery-instructors .instructors-index a{font-family:var(--font);font-size:16px;min-height:72px;padding:18px 24px;gap:18px;border:0}
+.gallery-instructors .instructors-index a:first-child{padding-left:0}
+.gallery-instructors .instructors-index a:hover{background:transparent;color:var(--muted)}
+.gallery-instructors .instructors-index small,.gallery-instructors .instructors-row-label>span,.gallery-instructors .instructors-support-row>span,.gallery-instructors .instructors-understanding-steps li>span{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.gallery-instructors .instructors-advice-row{grid-template-columns:140px minmax(0,1fr) minmax(0,1.1fr);gap:35px;padding:38px 0}
+.gallery-instructors .instructors-row-label>p{font-family:var(--sans);font-size:13px;line-height:2}
+.gallery-instructors .instructors-question{font-family:var(--font);font-size:25px;font-weight:500;line-height:1.9}
+.gallery-instructors .instructors-question>span,.gallery-instructors .instructors-row-label>p>span,.gallery-instructors .instructors-understanding h2>span{display:inline-block;max-width:100%}
+.gallery-instructors .instructors-advice-row h3{font-family:var(--font);font-size:20px;font-weight:500;color:var(--ink);line-height:1.8}
+.gallery-instructors .instructors-advice-row>p{font-family:var(--sans);font-size:16px;line-height:2.1}
+.gallery-instructors .instructors-reading{margin:35px 0 0 auto;width:100%;max-width:860px}
+.gallery-instructors .instructors-reading summary{font-size:16px}
+.gallery-instructors .instructors-reading>div{font-family:var(--sans);font-size:16px;line-height:2.1;overflow-wrap:anywhere}
+.gallery-instructors .instructors-reading h3{font-family:var(--font);font-size:24px;font-weight:500;line-height:1.8}
+.gallery-instructors .instructors-support-row{grid-template-columns:45px minmax(0,1fr) minmax(0,1.3fr);gap:30px;padding:38px 0}
+.gallery-instructors .instructors-support-row h3{font-size:27px;font-weight:500;line-height:1.8}
+.gallery-instructors .instructors-support-row>div>p{font-family:var(--sans);font-size:16px;line-height:2.1}
+.gallery-instructors .instructors-support-row .instructors-meta{font-size:14px;line-height:2;font-variant-numeric:tabular-nums}
+.gallery-instructors .instructors-support-row .text-link{font-size:15px}
+.gallery-instructors .instructors-support-note{font-family:var(--sans);font-size:14px;line-height:2.1}
+.gallery-instructors .instructors-understanding-layout{grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:65px;max-width:980px;margin:52px auto 0}
+.gallery-instructors .instructors-lesson-photo{background:transparent}
+.gallery-instructors .instructors-understanding-steps li{padding:24px 0}
+.gallery-instructors .instructors-understanding-steps h3{font-family:var(--font);font-size:25px;font-weight:500;line-height:1.8}
+.gallery-instructors .instructors-understanding-steps p{font-family:var(--sans);font-size:16px;line-height:2.1}
+.gallery-instructors .instructors-understanding>.text-link{font-size:15px}
+.gallery-instructors .instructors-consultation h2{word-break:keep-all;overflow-wrap:anywhere}
+.gallery-instructors .instructors-profile-grid p{font-family:var(--sans);font-size:16px}
+.gallery-instructors .instructors-index{grid-template-columns:repeat(4,minmax(0,1fr))}
+.gallery-instructors .instructors-profile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:42px;margin-top:48px}
+.gallery-instructors .instructors-profile-card{min-width:0;border-bottom:1px solid var(--line);padding-bottom:30px}
+.gallery-instructors .instructors-profile-portrait{aspect-ratio:4/5;overflow:hidden}
+.gallery-instructors .instructors-profile-portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.gallery-instructors .instructors-profile-placeholder{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#e9e1d5;color:var(--muted);padding:20px;text-align:center}
+.gallery-instructors .instructors-profile-placeholder>span{font-family:var(--font);font-size:30px;color:var(--ink);letter-spacing:.015em}
+.gallery-instructors .instructors-profile-placeholder>p{font-size:13px;margin-top:10px;line-height:1.8}
+.gallery-instructors .instructors-profile-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px;margin-top:25px}
+.gallery-instructors .instructors-profile-heading h3{font-family:var(--font);font-size:28px;font-weight:500;line-height:1.7;margin:0}
+.gallery-instructors .instructors-profile-status{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.gallery-instructors .instructors-profile-grid .instructors-profile-affiliation{font-size:14px;color:var(--muted);margin-top:10px}
+.gallery-instructors .instructors-profile-facts{font-family:var(--sans);font-size:14px;color:var(--muted);margin:20px 0 0;border-top:1px solid var(--line);padding-top:18px;line-height:2}
+.gallery-instructors .instructors-profile-facts>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;margin-top:4px}
+.gallery-instructors .instructors-profile-facts dt,.gallery-instructors .instructors-profile-facts dd{margin:0;overflow-wrap:anywhere}
+.gallery-instructors .instructors-profile-grid .instructors-profile-message{font-size:16px;color:var(--muted);line-height:2.1;margin-top:20px}
+.gallery-instructors .instructors-profile-notice{font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;margin-top:16px}
+@media(min-width:761px) and (max-width:1000px){
+ .gallery-instructors .instructors-profile-grid{gap:24px}
+ .gallery-instructors .instructors-profile-placeholder>span{font-size:24px}
+ .gallery-instructors .instructors-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .gallery-instructors .instructors-index a:nth-child(n+3){border-top:1px solid var(--line)}
+ .gallery-instructors .instructors-index a:nth-child(2n+1){padding-left:0}
+}
+@media(min-width:761px) and (max-width:1100px){
+ .gallery-instructors .instructors-hero{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 35px}
+ .gallery-instructors .instructors-affiliation{font-size:28px}
+ .gallery-instructors .instructors-count>span:first-child{font-size:88px}
+ .gallery-instructors .instructors-count>span:last-child{font-size:18px}
+ .gallery-instructors .instructors-advice-row{grid-template-columns:100px minmax(0,1fr) minmax(0,1fr);gap:24px}
+ .gallery-instructors .instructors-question{font-size:23px}
+ .gallery-instructors .instructors-support-row{grid-template-columns:32px minmax(0,1fr) minmax(0,1.3fr);gap:24px}
+ .gallery-instructors .instructors-support-row h3{font-size:24px}
+ .gallery-instructors .instructors-understanding-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px}
+ .gallery-instructors .instructors-understanding-steps h3{font-size:23px}
+}
+@media(max-width:760px){
+ .gallery-instructors .instructors-hero{display:flex;padding:25px 24px 0;gap:0}
+ .gallery-instructors .instructors-breadcrumb{font-size:12px;margin-bottom:30px}
+ .gallery-instructors .instructors-hero-heading{order:0;width:100%;margin-bottom:30px}
+ .gallery-instructors .instructors-hero-heading .section-label{font-size:21px;margin-bottom:25px}
+ .gallery-instructors .instructors-hero h1{font-size:clamp(29px,8vw,42px);line-height:1.75;letter-spacing:.01em}
+ .gallery-instructors .instructors-hero-copy{order:1;width:100%;padding:0;align-items:center;text-align:center}
+ .gallery-instructors .instructors-affiliation{font-size:28px;line-height:1.8}
+ .gallery-instructors .instructors-affiliation>span{display:block;font-size:16px;margin:5px 0 0}
+ .gallery-instructors .instructors-hero-lead{font-size:16px;text-align:left;margin-top:24px;max-width:30em}
+ .gallery-instructors .instructors-count{justify-content:center;gap:5px 20px;flex-wrap:wrap;margin-top:26px;padding-top:16px}
+ .gallery-instructors .instructors-count>span:first-child{font-size:88px}
+ .gallery-instructors .instructors-count small{font-size:34px}
+ .gallery-instructors .instructors-count>span:last-child{font-size:19px}
+ .gallery-instructors .instructors-hero-copy>.text-link{font-size:15px;margin:12px 0 26px;padding-top:13px}
+ .gallery-instructors .instructors-hero-photo{order:2;width:86%;max-width:360px;aspect-ratio:auto;align-self:center}
+ .gallery-instructors .instructors-hero-photo figcaption{font-size:13px;text-align:left}
+ .gallery-instructors .instructors-hero-bottom{order:3;width:100%;font-size:12px;line-height:2;padding:22px 0 28px}
+ .gallery-instructors .instructors-index{padding-inline:24px}
+ .gallery-instructors .instructors-index{grid-template-columns:1fr}
+ .gallery-instructors .instructors-index a,.gallery-instructors .instructors-index a:first-child{padding:17px 0;font-size:16px;gap:20px;min-height:64px}
+ .gallery-instructors .instructors-index a+a{border-top:1px solid var(--line)}
+ .gallery-instructors .instructors-advice-row{grid-template-columns:24px minmax(0,1fr);gap:12px 16px;padding:30px 0}
+ .gallery-instructors .instructors-advice-row>p{font-size:16px;grid-column:2}
+ .gallery-instructors .instructors-question{font-size:24px;line-height:1.8}
+ .gallery-instructors .instructors-advice-row h3{font-size:19px;margin-top:16px}
+ .gallery-instructors .instructors-row-label>p{display:block;font-size:13px}
+ .gallery-instructors .instructors-row-label{display:contents}
+ .gallery-instructors .instructors-row-label>span{grid-column:1;grid-row:1;padding-top:4px}
+ .gallery-instructors .instructors-row-label>p{grid-column:2;grid-row:1;margin:0}
+ .gallery-instructors .instructors-advice-row>div:not(.instructors-row-label){grid-column:2}
+ .gallery-instructors .instructors-reading{margin-top:28px}
+ .gallery-instructors .instructors-reading summary{font-size:15px}
+ .gallery-instructors .instructors-reading>div{font-size:16px}
+ .gallery-instructors .instructors-reading h3{font-size:22px}
+ .gallery-instructors .instructors-support-row{grid-template-columns:25px minmax(0,1fr);gap:14px;padding:30px 0}
+ .gallery-instructors .instructors-support-row h3{font-size:25px}
+ .gallery-instructors .instructors-support-row>div{grid-column:2}
+ .gallery-instructors .instructors-support-row>div>p{font-size:16px}
+ .gallery-instructors .instructors-support-row .instructors-meta{font-size:14px}
+ .gallery-instructors .instructors-support-row .text-link{font-size:15px}
+ .gallery-instructors .instructors-support-note{font-size:14px}
+ .gallery-instructors .instructors-understanding-layout{display:flex;flex-direction:column;gap:30px;margin-top:35px}
+ .gallery-instructors .instructors-lesson-photo{width:86%;max-width:360px;align-self:center}
+ .gallery-instructors .instructors-understanding-steps{margin:0;width:100%}
+ .gallery-instructors .instructors-understanding-steps h3{font-size:24px}
+ .gallery-instructors .instructors-understanding-steps p{font-size:16px}
+ .gallery-instructors .instructors-understanding>.text-link{font-size:15px}
+ .gallery-instructors .instructors-profile-grid{grid-template-columns:1fr;gap:44px;max-width:360px;margin:35px auto 0}
+ .gallery-instructors .instructors-profile-portrait{width:86%;margin-inline:auto}
+ .gallery-instructors .instructors-profile-heading{margin-top:24px}
+ .gallery-instructors .instructors-profile-heading h3{font-size:27px}
+ .gallery-instructors .instructors-profile-placeholder>span{font-size:28px}
+}
+@media(max-width:360px){
+ .gallery-instructors .instructors-hero,.gallery-instructors .instructors-index{padding-inline:20px}
+ .gallery-instructors .instructors-hero h1{font-size:26px}
+ .gallery-instructors .instructors-count{gap:4px 14px}
+ .gallery-instructors .instructors-count>span:first-child{font-size:80px}
+ .gallery-instructors .instructors-count>span:last-child{font-size:17px}
+ .gallery-instructors .instructors-question{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .gallery-instructors .instructors-hero-photo picture,.gallery-instructors .instructors-hero-photo img{animation:none;transform:none;clip-path:none}
+}
+
+/* 講師紹介は一列の横スライド。JSなしでも指・キーボードで閲覧できる。 */
+.gallery-instructors .instructors-profile-viewport{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;scroll-behavior:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent;margin-top:26px;padding-bottom:18px}
+.gallery-instructors .instructors-profiles .instructors-profile-grid{display:flex;width:max-content;max-width:none;gap:24px;margin:0;align-items:stretch}
+.gallery-instructors .instructors-profiles .instructors-profile-card{flex:0 0 auto;width:340px;padding-bottom:18px}
+.gallery-instructors .instructors-profile-overview{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;align-items:start}
+.gallery-instructors .instructors-profile-info{min-width:0}
+.gallery-instructors .instructors-profiles .instructors-profile-portrait{width:100%;margin:0}
+.gallery-instructors .instructors-profiles .instructors-profile-portrait img{object-fit:contain}
+.gallery-instructors .instructors-profiles .instructors-profile-heading{margin-top:0;gap:2px 12px}
+.gallery-instructors .instructors-profiles .instructors-profile-heading h3{font-size:24px;line-height:1.5;overflow-wrap:anywhere}
+.gallery-instructors .instructors-profiles .instructors-profile-affiliation{margin-top:6px;line-height:1.8}
+.gallery-instructors .instructors-profile-affiliation>span{display:block}
+.gallery-instructors .instructors-profiles .instructors-profile-facts{margin-top:10px;padding-top:10px;line-height:1.7}
+.gallery-instructors .instructors-profiles .instructors-profile-facts>div{grid-template-columns:4.6em minmax(0,1fr);margin-top:2px;gap:8px}
+.gallery-instructors .instructors-profile-facts dt{white-space:nowrap}
+.gallery-instructors .instructors-profiles .instructors-profile-message{margin-top:20px;line-height:1.8;overflow-wrap:anywhere}
+.gallery-instructors .instructors-profile-message-label{display:block;font-family:var(--font);font-size:15px;color:var(--ink);margin-bottom:8px}
+.gallery-instructors .instructors-profiles .instructors-profile-placeholder{padding:8px}
+.gallery-instructors .instructors-profiles .instructors-profile-placeholder>span{font-size:17px;letter-spacing:0}
+.gallery-instructors .instructors-profiles .instructors-profile-placeholder>p{font-size:12px}
+.gallery-instructors .instructors-profile-viewport[data-carousel-ready]{cursor:grab;touch-action:pan-y pinch-zoom;user-select:none}
+.gallery-instructors .instructors-profile-viewport.is-dragging{cursor:grabbing}
+.gallery-instructors .instructors-carousel-hint{font-family:var(--sans);font-size:14px;color:var(--muted);margin:0}
+.gallery-instructors .instructors-carousel-touch-hint{display:none}
+.gallery-instructors .instructors-carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:38px;border-top:1px solid var(--line);padding-top:18px}
+.gallery-instructors .instructors-carousel-controls[hidden]{display:none}
+.gallery-instructors .instructors-carousel-controls>div{display:flex;gap:12px}
+.gallery-instructors .instructors-carousel-controls button{min-width:48px;min-height:48px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:10px 16px;cursor:pointer;font-size:17px;line-height:1.5;transition:background .3s,border-color .3s}
+.gallery-instructors .instructors-carousel-controls .instructors-carousel-toggle{font-size:15px;border:0;border-bottom:1px solid var(--line);padding-inline:0;min-width:105px}
+.gallery-instructors .instructors-carousel-controls button:hover{background:#e9e1d5;border-color:var(--muted)}
+.gallery-instructors .instructors-carousel-controls button:disabled{cursor:default;color:var(--muted);background:transparent;border-color:var(--line)}
+@media(max-width:760px){
+ .gallery-instructors .instructors-profiles .instructors-profile-grid{gap:20px}
+ .gallery-instructors .instructors-profiles .instructors-profile-card{width:min(300px,calc(100vw - 48px))}
+ .gallery-instructors .instructors-profile-overview{grid-template-columns:112px minmax(0,1fr);gap:14px}
+ .gallery-instructors .instructors-profiles .instructors-profile-heading h3{font-size:23px}
+ .gallery-instructors .instructors-profiles .instructors-profile-placeholder>span{font-size:15px}
+ .gallery-instructors .instructors-carousel-controls{margin-top:30px}
+ .gallery-instructors .instructors-profile-viewport{margin-top:22px}
+}
+@media(pointer:coarse){
+ .gallery-instructors .instructors-carousel-mouse-hint{display:none}
+ .gallery-instructors .instructors-carousel-touch-hint{display:inline}
+}
+
+/* 講師を全員広大医学部医学科生に揃える理由。確認済みの教育方針を短い3項目で示す。 */
+.gallery-instructors .instructors-index{grid-template-columns:repeat(5,minmax(0,1fr))}
+.gallery-instructors .instructors-index a{gap:12px;padding-inline:16px}
+.gallery-instructors .instructors-index a:first-child{padding-left:0}
+.gallery-instructors .instructors-reasons .section-top h2 br{display:block}
+.gallery-instructors .instructors-reasons .section-top h2>span{display:inline-block;max-width:100%}
+.instructors-reason-rows{margin:50px 0 0 auto;max-width:1080px;border-bottom:1px solid var(--line)}
+.instructors-reason-row{display:grid;grid-template-columns:40px minmax(0,1fr) minmax(0,1.1fr);gap:30px;padding:36px 0;border-top:1px solid var(--line);align-items:start}
+.instructors-reason-row>span{font-family:var(--sans);font-size:13px;color:var(--muted);padding-top:5px}
+.instructors-reason-row h3{font-family:var(--font);font-size:25px;line-height:1.9}
+.instructors-reason-row>p{font-family:var(--sans);font-size:16px;line-height:2.1;color:var(--muted)}
+@media(min-width:761px) and (max-width:1100px){.gallery-instructors .instructors-index{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-instructors .instructors-index a:nth-child(n+3){border-top:1px solid var(--line)}.gallery-instructors .instructors-index a:nth-child(2n+1){padding-left:0}.instructors-reason-row{gap:22px}}
+@media(max-width:760px){.gallery-instructors .instructors-index{grid-template-columns:1fr}.gallery-instructors .instructors-index a{padding-inline:0}.gallery-instructors .instructors-reasons h2{font-size:clamp(27px,6.8vw,38px)}.instructors-reason-rows{margin-top:35px}.instructors-reason-row{grid-template-columns:26px minmax(0,1fr);gap:14px 16px;padding:28px 0}.instructors-reason-row>span{grid-row:1/3}.instructors-reason-row h3{font-size:23px}.instructors-reason-row>p{grid-column:2}}
+
+/* 講師陣の集合ビジュアルを横いっぱいに、紹介文と在籍数はその下に配置する。 */
+.gallery-instructors .instructors-hero{display:block;max-width:1280px;padding-inline:6%}
+.gallery-instructors .instructors-hero-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 72px;max-width:1000px;margin:38px auto 0;align-items:start;text-align:left}
+.gallery-instructors .instructors-affiliation{grid-column:1;grid-row:1;font-size:26px}
+.gallery-instructors .instructors-affiliation br{display:none}
+.gallery-instructors .instructors-affiliation>span{font-size:16px;margin-left:10px}
+.gallery-instructors .instructors-hero-lead{grid-column:1;grid-row:2;max-width:36em;margin-top:18px}
+.gallery-instructors .instructors-count{grid-column:2;grid-row:1/4;margin:0;padding:0;border:0;align-self:center}
+.gallery-instructors .instructors-hero-copy>.text-link{grid-column:1;grid-row:3;justify-self:start;margin-top:16px;padding-top:0}
+.gallery-instructors .instructors-profile-card-photo .instructors-profile-overview{align-items:center}
+@media(max-width:760px){
+ .gallery-instructors .instructors-hero{padding-inline:24px}
+ .gallery-instructors .instructors-hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin-top:25px;text-align:left}
+ .gallery-instructors .instructors-affiliation{font-size:24px}
+ .gallery-instructors .instructors-affiliation>span{display:block;margin:5px 0 0}
+ .gallery-instructors .instructors-count{order:-1;align-self:flex-start;margin:0 0 24px;justify-content:flex-start;gap:5px 20px}
+ .gallery-instructors .instructors-count>span:first-child{font-size:72px}
+ .gallery-instructors .instructors-count small{font-size:28px}
+ .gallery-instructors .instructors-count>span:last-child{font-size:17px}
+ .gallery-instructors .instructors-hero-copy>.text-link{margin:16px 0 0}
+}
+
+/* 実名の講師紹介は、長い氏名もカード幅の中で読みやすく収める。 */
+.gallery-instructors .instructors-profiles .instructors-profile-heading h3{font-size:21px;line-height:1.7;letter-spacing:.02em;word-break:normal;overflow-wrap:anywhere}
+.gallery-instructors .instructors-profile-heading h3{font-weight:500}
+.gallery-instructors .instructors-hero>.instructor-support-summary{margin-top:36px;max-width:1000px}
+@media(max-width:760px){.gallery-instructors .instructors-profiles .instructors-profile-heading h3{font-size:20px}.gallery-instructors .instructors-hero>.instructor-support-summary{margin-top:28px}}

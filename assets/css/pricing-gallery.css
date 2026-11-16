@@ -1,0 +1,153 @@
+/* 料金・コース：共通Galleryテーマに重ね、金額とサポートの違いを整理する。 */
+.gallery-pricing .pricing-hero{display:block;max-width:1180px;margin:auto;padding:30px 30px 75px}
+.gallery-pricing .pricing-breadcrumb{font-family:var(--sans);font-size:12px;margin-bottom:44px}
+.gallery-pricing .pricing-hero-heading{text-align:center}
+.gallery-pricing .pricing-hero-heading .section-label{justify-content:center;font-family:var(--font);font-size:25px;font-weight:500;color:var(--ink);margin-bottom:24px}
+.gallery-pricing .pricing-hero h1{font-family:var(--font);font-size:clamp(44px,5vw,68px);font-weight:500;line-height:1.6;letter-spacing:.05em}
+.gallery-pricing .pricing-hero-copy{max-width:42em;margin:28px auto 0;padding:0;border:0;text-align:center}
+.gallery-pricing .pricing-hero-lead{font-family:var(--font);font-size:26px;font-weight:500;line-height:1.9}
+.gallery-pricing .pricing-hero-copy>p:not(.pricing-hero-lead){font-family:var(--sans);font-size:16px;line-height:2.1;margin-top:22px}
+.gallery-pricing .pricing-hero-copy>.pricing-tax{font-size:14px!important;color:var(--muted)!important;margin-top:22px!important}
+.gallery-pricing .pricing-index{max-width:1180px;margin:auto;padding:0 30px;border-bottom:1px solid var(--line);grid-template-columns:repeat(4,minmax(0,1fr))}
+.gallery-pricing .pricing-index a{font-family:var(--font);font-size:16px;min-height:76px;gap:16px;padding:20px 22px;border:0;line-height:1.8}
+.gallery-pricing .pricing-index a:first-child{padding-left:0}
+.gallery-pricing .pricing-index a:hover{background:transparent;color:var(--muted)}
+.gallery-pricing .pricing-index small{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.gallery-pricing .pricing-plans .section-top>p{max-width:43em}
+.gallery-pricing .pricing-plans .course-tabs{max-width:900px;margin:48px auto 0;border:0;border-bottom:1px solid var(--line)}
+.gallery-pricing .pricing-plans .course-tabs button{background:transparent;border:0;border-bottom:2px solid transparent;padding:22px 30px 24px;box-shadow:none;color:var(--muted)}
+.gallery-pricing .pricing-plans .course-tabs button+button{border-left:1px solid var(--line)}
+.gallery-pricing .pricing-plans .course-tabs button[aria-selected=true]{border-bottom-color:var(--ink);color:var(--ink);background:transparent;box-shadow:none}
+.gallery-pricing .pricing-plans .course-tabs button:hover{color:var(--ink)}
+.gallery-pricing .pricing-plans .course-tabs button>span{font-family:var(--font);font-size:25px;letter-spacing:.035em}
+.gallery-pricing .pricing-plans .course-tabs button>small{font-family:var(--sans);font-size:15px;line-height:1.8;margin-top:8px}
+.gallery-pricing .pricing-plans .course-tabs .pricing-tab-fee{font-family:var(--sans);font-size:21px;color:inherit;font-variant-numeric:tabular-nums;margin-top:14px}
+.gallery-pricing .course-detail{max-width:1080px;margin-inline:auto;padding:48px 0;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:start}
+.gallery-pricing .course-detail h3{font-family:var(--font);font-size:30px;font-weight:500;line-height:1.8;max-width:14em;margin:18px 0 24px}
+.gallery-pricing .course-detail>div>p:not(.eyebrow,.price){font-family:var(--sans);font-size:16px;line-height:2.1;max-width:28em}
+.gallery-pricing .course-detail .eyebrow{font-family:var(--font);font-size:16px;color:var(--ink)}
+.gallery-pricing .pricing-plans .pricing-meeting{font-family:var(--sans);font-size:16px!important;color:var(--ink)!important;line-height:2;margin-top:24px;padding-top:18px}
+.gallery-pricing .course-right{padding-left:42px}
+.gallery-pricing .price{font-family:var(--sans);font-variant-numeric:tabular-nums;gap:8px;line-height:1.4}
+.gallery-pricing .price strong{font-size:64px;font-weight:500}
+.gallery-pricing .price>span:last-child{font-size:15px}
+.gallery-pricing .course-right ul{font-family:var(--sans);font-size:16px;line-height:2.1;margin:24px 0 30px}
+.gallery-pricing .course-right .contact{font-size:15px;padding:16px 22px}
+.gallery-pricing .price-note{max-width:1080px;margin:24px auto 0;font-family:var(--sans);font-size:14px;line-height:2.1;font-variant-numeric:tabular-nums}
+.gallery-pricing .pricing-comparison{max-width:1080px;margin:30px auto 0}
+.gallery-pricing .pricing-comparison summary{font-size:17px}
+.gallery-pricing .pricing-comparison table{font-family:var(--sans);font-size:16px;line-height:1.9;font-variant-numeric:tabular-nums;margin-bottom:28px}
+.gallery-pricing .pricing-comparison thead th{font-size:15px;color:var(--ink)}
+.gallery-pricing .pricing-comparison th,.gallery-pricing .pricing-comparison td{padding:20px 24px}
+.gallery-pricing .pricing-comparison th:first-child{padding-left:0}
+.gallery-pricing .pricing-comparison td:last-child{background:transparent}
+.gallery-pricing .pricing-online-note{font-family:var(--sans);font-size:16px;margin:30px 0 0;text-align:center}
+.gallery-pricing .pricing-lesson-fees{max-width:900px;margin:42px auto 0}
+.gallery-pricing .pricing-lesson-fees>div{padding:30px 0;text-align:center}
+.gallery-pricing .pricing-lesson-fees>div+div{padding-left:0}
+.gallery-pricing .pricing-lesson-fees h3{font-family:var(--font);font-size:23px;font-weight:500;margin-bottom:14px;color:var(--ink)}
+.gallery-pricing .pricing-lesson-fees p{font-family:var(--sans);font-size:17px;font-variant-numeric:tabular-nums;line-height:1.7}
+.gallery-pricing .pricing-lesson-fees strong{font-size:48px;font-weight:500;letter-spacing:-.035em;margin-right:6px}
+.gallery-pricing .pricing-discount{max-width:900px;margin:58px auto 0;padding:34px 0;background:transparent;border:0;border-bottom:1px solid var(--line)}
+.gallery-pricing .pricing-discount>p:first-child{font-family:var(--sans);font-size:16px;text-align:center}
+.gallery-pricing .pricing-discount h3{font-family:var(--font);font-size:clamp(28px,2.9vw,39px);font-weight:500;line-height:1.8;text-align:center;margin-top:16px;overflow-wrap:anywhere}
+.gallery-pricing .pricing-discount-fees{gap:48px;margin-top:32px;padding-top:26px}
+.gallery-pricing .pricing-discount-fees p>span{font-family:var(--sans);font-size:15px;line-height:2}
+.gallery-pricing .pricing-discount-fees strong{font-family:var(--sans);font-size:43px;font-weight:500;font-variant-numeric:tabular-nums}
+.gallery-pricing .pricing-discount-fees small{font-size:14px;font-weight:400}
+.gallery-pricing .pricing-discount-fees p>span:last-child{font-size:16px}
+.gallery-pricing .pricing-discount-note{font-family:var(--sans);font-size:16px;line-height:2.1;margin-top:26px;max-width:42em}
+.gallery-pricing .pricing-other-rows{max-width:1080px;margin:50px auto 0}
+.gallery-pricing .pricing-other-row{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;padding:40px 0}
+.gallery-pricing .pricing-other-row .eyebrow{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.gallery-pricing .pricing-other-row h3{font-family:var(--font);font-size:29px;font-weight:500;line-height:1.7}
+.gallery-pricing .pricing-other-title{font-family:var(--font);font-size:20px;line-height:1.9;margin-top:14px}
+.gallery-pricing .pricing-other-price{font-family:var(--sans);font-size:32px;font-weight:500;line-height:1.8;font-variant-numeric:tabular-nums}
+.gallery-pricing .pricing-fee-note{font-family:var(--sans);font-size:14px;margin-top:8px}
+.gallery-pricing .pricing-other-body{font-family:var(--sans);font-size:16px;line-height:2.1;max-width:30em;margin-top:22px}
+.gallery-pricing .pricing-other-row .text-link{font-size:16px;margin-top:18px}
+.gallery-pricing .pricing-extra-fees{max-width:900px;margin:48px 0 0 auto}
+.gallery-pricing .pricing-extra-fees>div{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding:28px 0}
+.gallery-pricing .pricing-extra-fees dt{font-family:var(--font);font-size:23px;font-weight:500;line-height:1.8}
+.gallery-pricing .pricing-extra-fees dd{font-family:var(--sans);font-size:32px;font-weight:500;line-height:1.8;font-variant-numeric:tabular-nums}
+.gallery-pricing .pricing-extra-fees small{font-size:14px;font-weight:400;margin-left:16px}
+.gallery-pricing .pricing-extra-amount{display:block}
+.gallery-pricing .pricing-extra-description{font-family:var(--sans);font-size:16px;font-weight:400;line-height:2.1;color:var(--muted);margin-top:14px;max-width:29em}
+@media(min-width:761px) and (max-width:1100px){
+ .gallery-pricing .pricing-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .gallery-pricing .pricing-index a:nth-child(n+3){border-top:1px solid var(--line)}
+ .gallery-pricing .pricing-index a:nth-child(2n+1){padding-left:0}
+ .gallery-pricing .course-detail,.gallery-pricing .pricing-other-row{gap:35px}
+ .gallery-pricing .course-right{padding-left:28px}
+ .gallery-pricing .course-detail h3{font-size:27px}
+ .gallery-pricing .price strong{font-size:53px}
+ .gallery-pricing .pricing-discount-fees{gap:26px}
+ .gallery-pricing .pricing-discount-fees small{display:block;margin:0}
+}
+@media(max-width:760px){
+ .gallery-pricing .pricing-hero{padding:25px 24px 46px}
+ .gallery-pricing .pricing-breadcrumb{font-size:12px;margin-bottom:32px}
+ .gallery-pricing .pricing-hero-heading .section-label{font-size:21px;margin-bottom:22px}
+ .gallery-pricing .pricing-hero h1{font-size:clamp(34px,10vw,46px);line-height:1.7}
+ .gallery-pricing .pricing-hero-copy{margin-top:24px}
+ .gallery-pricing .pricing-hero-lead{font-size:22px;line-height:1.9;letter-spacing:.01em}
+ .gallery-pricing .pricing-hero-copy>p:not(.pricing-hero-lead){font-size:16px;margin-top:22px;text-align:left}
+ .gallery-pricing .pricing-hero-copy>.pricing-tax{font-size:14px!important;text-align:center}
+ .gallery-pricing .pricing-index{padding-inline:24px;grid-template-columns:1fr}
+ .gallery-pricing .pricing-index a,.gallery-pricing .pricing-index a:first-child,.gallery-pricing .pricing-index a:nth-child(2n){min-height:64px;padding:17px 0;font-size:16px;gap:20px;border:0}
+ .gallery-pricing .pricing-index a+a{border-top:1px solid var(--line)}
+ .gallery-pricing .pricing-index a>span{display:inline-block}
+ .gallery-pricing .pricing-plans .course-tabs{margin-top:34px}
+ .gallery-pricing .pricing-plans .course-tabs button{padding:20px 9px;min-height:156px}
+ .gallery-pricing .pricing-plans .course-tabs button>span{font-size:clamp(14px,4.2vw,19px);letter-spacing:0}
+ .gallery-pricing .pricing-plans .course-tabs button>small{font-size:13px;line-height:1.8;margin-top:10px}
+ .gallery-pricing .pricing-plans .course-tabs .pricing-tab-fee{font-size:17px;line-height:1.8;margin-top:12px}
+ .gallery-pricing .course-detail{display:block;padding:32px 0}
+ .gallery-pricing .course-detail h3{font-size:25px;margin:16px 0 22px}
+ .gallery-pricing .course-right{border:0;padding:28px 0 0}
+ .gallery-pricing .price strong{font-size:54px}
+ .gallery-pricing .course-right .contact{font-size:14px;padding:15px 20px}
+ .gallery-pricing .price-note{font-size:14px;margin-top:22px}
+ .gallery-pricing .pricing-comparison{margin-top:24px}
+ .gallery-pricing .pricing-comparison summary{font-size:16px}
+ .gallery-pricing .pricing-comparison table{font-size:14px;line-height:1.8}
+ .gallery-pricing .pricing-comparison th,.gallery-pricing .pricing-comparison td{padding:16px 9px}
+ .gallery-pricing .pricing-comparison th:first-child{width:32%}
+ .gallery-pricing .pricing-comparison thead th{font-size:12px;letter-spacing:0}
+ .gallery-pricing .pricing-online-note{font-size:16px;margin-top:25px}
+ .gallery-pricing .pricing-lesson-fees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:32px}
+ .gallery-pricing .pricing-lesson-fees>div,.gallery-pricing .pricing-lesson-fees>div+div{padding:24px 0}
+ .gallery-pricing .pricing-lesson-fees>div+div{border-top:0;border-left:1px solid var(--line)}
+ .gallery-pricing .pricing-lesson-fees h3{font-size:21px}
+ .gallery-pricing .pricing-lesson-fees p{font-size:14px}
+ .gallery-pricing .pricing-lesson-fees strong{font-size:34px;margin-right:3px}
+ .gallery-pricing .pricing-discount{margin-top:35px;padding:24px 0}
+ .gallery-pricing .pricing-discount>p:first-child{font-size:16px;text-align:left}
+ .gallery-pricing .pricing-discount h3{font-size:26px;text-align:left;margin-top:14px}
+ .gallery-pricing .pricing-discount-fees{grid-template-columns:1fr;gap:24px;padding-top:24px;margin-top:24px}
+ .gallery-pricing .pricing-discount-fees strong{font-size:40px}
+ .gallery-pricing .pricing-discount-fees small{font-size:14px;display:inline-block;margin-left:10px}
+ .gallery-pricing .pricing-discount-note{font-size:16px;margin-top:24px}
+ .gallery-pricing .pricing-other-rows{margin-top:34px}
+ .gallery-pricing .pricing-other-row{grid-template-columns:1fr;gap:22px;padding:30px 0}
+ .gallery-pricing .pricing-other-row h3{font-size:26px}
+ .gallery-pricing .pricing-other-title{font-size:20px;margin-top:12px}
+ .gallery-pricing .pricing-other-price{font-size:29px}
+ .gallery-pricing .pricing-other-body{font-size:16px;margin-top:18px}
+ .gallery-pricing .pricing-other-row .text-link{font-size:15px;margin-top:14px}
+ .gallery-pricing .pricing-extra-fees{margin-top:34px}
+ .gallery-pricing .pricing-extra-fees>div{grid-template-columns:1fr;gap:12px;padding:24px 0}
+ .gallery-pricing .pricing-extra-fees dt{font-size:22px}
+ .gallery-pricing .pricing-extra-fees dd{font-size:30px}
+}
+@media(max-width:360px){
+ .gallery-pricing .pricing-hero,.gallery-pricing .pricing-index{padding-inline:20px}
+ .gallery-pricing .pricing-hero-lead{font-size:21px}
+ .gallery-pricing .pricing-plans .course-tabs button{padding-inline:6px}
+ .gallery-pricing .pricing-plans .course-tabs .pricing-tab-fee{font-size:16px}
+ .gallery-pricing .pricing-lesson-fees strong{font-size:30px}
+ .gallery-pricing .pricing-lesson-fees p{font-size:13px}
+ .gallery-pricing .pricing-discount-fees small{display:block;margin:0}
+ .gallery-pricing .pricing-other-price{font-size:26px}
+ .gallery-pricing .pricing-extra-fees small{display:block;margin:2px 0 0}
+}

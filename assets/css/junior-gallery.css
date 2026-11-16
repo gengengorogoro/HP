@@ -1,0 +1,83 @@
+/* Junior：写真、明朝体の見出しと、短い具体的な説明。 */
+.gallery-junior .junior-hero{max-width:1180px;margin-inline:auto;padding:12px 5% 90px}
+.junior-breadcrumb{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px;margin-bottom:48px}
+.junior-hero-heading{text-align:center}
+.junior-hero-heading .section-label{justify-content:center;margin-bottom:28px}
+.junior-hero-heading h1{font-size:clamp(38px,4.6vw,66px);line-height:1.7;letter-spacing:.045em}
+.junior-hero-heading h1>span{display:inline-block;max-width:100%}
+.junior-hero-lead{font-family:var(--font);font-size:22px;line-height:2;margin:26px auto 0;max-width:34em}
+.junior-hero-layout{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:65px;align-items:center;margin-top:46px}
+.junior-hero-photo{width:100%;margin:0}
+.junior-hero-photo picture{display:block;aspect-ratio:4/3;overflow:hidden;animation:gallery-photo-open 1.65s var(--ease) .15s both}
+.junior-hero-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 55%;animation:gallery-photo-settle 1.65s var(--ease) .15s both}
+.junior-hero-photo figcaption{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:12px}
+.junior-hero-copy{min-width:0}
+.junior-concept{font-family:var(--font);font-size:24px;line-height:1.9;margin-bottom:22px}
+.junior-hero-copy>p:not(.junior-concept){font-size:16px;line-height:2.1;color:var(--muted)}
+.junior-hero-copy .text-link{margin-top:20px;font-size:15px}
+.junior-support-rows{max-width:1080px;margin:50px 0 0 auto;border-bottom:1px solid var(--line)}
+.junior-support-row{display:grid;grid-template-columns:42px minmax(0,1.1fr) minmax(0,1fr);gap:28px;padding:36px 0;border-top:1px solid var(--line);align-items:start}
+.junior-number{font-family:var(--sans);color:var(--muted);font-size:13px;letter-spacing:.04em;padding-top:4px}
+.junior-support-row h3{font-size:25px;line-height:1.9}
+.junior-support-row p{font-size:16px;color:var(--muted);line-height:2.1}
+.junior-steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:45px;margin:55px 0 0}
+.junior-steps li{border-top:1px solid var(--line);padding:25px 0 0}
+.junior-steps .junior-number{display:block;padding:0}
+.junior-steps h3{font-size:26px;line-height:1.85;margin:18px 0}
+.junior-steps p{font-size:16px;color:var(--muted);line-height:2.1}
+.junior-teacher-copy{max-width:620px;margin:65px 0 0 auto;border-top:1px solid var(--line);padding-top:32px}
+.junior-affiliation{font-family:var(--font);font-size:25px;line-height:1.9;margin-bottom:22px}
+.junior-teacher-copy>p:not(.junior-affiliation){font-size:16px;color:var(--muted)}
+.junior-teacher-copy .text-link{font-size:15px;margin-top:15px;margin-right:28px}
+.junior-price-block{max-width:980px;margin:55px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:65px}
+.junior-main-price{min-width:0}
+.junior-duration{font-family:var(--font);font-size:21px;margin-bottom:18px}
+.junior-amount{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 20px;font-family:var(--sans);font-variant-numeric:tabular-nums;line-height:1.5;margin-bottom:23px}
+.junior-amount>span:first-child{font-size:23px}
+.junior-amount strong{font-size:64px;font-weight:400;letter-spacing:-.04em}
+.junior-amount strong small{font-size:24px;letter-spacing:0;margin-left:8px}
+.junior-amount .junior-tax{font-size:14px;color:var(--muted)}
+.junior-main-price>p:last-child{font-size:16px;color:var(--muted);line-height:2.1}
+.junior-extra-fees{font-family:var(--sans);font-size:16px;min-width:0}
+.junior-extra-fees>div{padding:24px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:80px minmax(0,1fr);gap:22px}
+.junior-extra-fees dt{color:var(--muted)}
+.junior-extra-fees dd{margin:0;min-width:0}
+.junior-extra-fees dd>span{font-size:22px;font-variant-numeric:tabular-nums}
+.junior-extra-fees small{font-size:14px;white-space:nowrap}
+.junior-extra-fees dd p{font-size:16px;line-height:2.1;margin-top:15px;color:var(--muted)}
+.junior-pricing>.text-link{display:flex;justify-content:center;margin-top:35px}
+.junior-consultation-body,.gallery-junior .junior-reservation{max-width:35em;margin-inline:auto}
+.gallery-junior .junior-reservation{margin-top:32px;color:var(--muted)}
+.junior-consultation .text-link{margin-top:18px}
+@media(max-width:1100px){.junior-hero-layout{grid-template-columns:1fr 1fr;gap:40px}.junior-support-row{gap:22px}.junior-steps{gap:30px}.junior-steps h3{font-size:23px}.junior-price-block{gap:40px}.junior-amount strong{font-size:54px}}
+@media(max-width:760px){
+ .gallery-junior .junior-hero{padding:16px 24px 70px}
+ .junior-breadcrumb{margin-bottom:36px}
+ .junior-hero-heading .section-label{margin-bottom:24px}
+ .junior-hero-heading h1{font-size:clamp(30px,8vw,46px);line-height:1.85;letter-spacing:.025em}
+ .junior-hero-lead{font-size:20px;max-width:24em;margin-top:22px}
+ .junior-hero-layout{display:flex;flex-direction:column;gap:30px;margin-top:32px}
+ .junior-hero-photo{width:86%;max-width:360px}
+ .junior-concept{font-size:22px;margin-bottom:18px}
+ .junior-hero-copy>p:not(.junior-concept){font-size:16px}
+ .junior-support-rows{margin-top:36px}
+ .junior-support-row{grid-template-columns:26px minmax(0,1fr);gap:14px 16px;padding:28px 0}
+ .junior-support-row .junior-number{grid-row:1/3}
+ .junior-support-row h3{font-size:23px}
+ .junior-support-row p{grid-column:2}
+ .junior-steps{display:block;margin-top:36px}
+ .junior-steps li{padding:25px 0}
+ .junior-steps h3{font-size:24px;margin:14px 0}
+ .junior-teacher-copy{margin-top:28px;padding-top:28px}
+ .junior-affiliation{font-size:23px;margin-bottom:20px}
+ .junior-teacher-copy .text-link{display:flex;width:fit-content;margin-right:0}
+ .junior-price-block{display:block;margin-top:36px}
+ .junior-amount{gap:8px 16px}
+ .junior-amount strong{font-size:56px}
+ .junior-extra-fees{margin-top:35px}
+ .junior-extra-fees>div{grid-template-columns:70px minmax(0,1fr);gap:16px}
+ .junior-pricing>.text-link{font-size:15px;justify-content:flex-start}
+ .gallery-junior .junior-reservation{margin-top:28px}
+}
+@media(max-width:360px){.gallery-junior .junior-hero{padding-inline:20px}.junior-concept{font-size:20px}.junior-amount strong{font-size:50px}.junior-extra-fees>div{grid-template-columns:1fr;gap:6px}.junior-hero-copy .text-link{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.junior-hero-photo picture,.junior-hero-photo img{animation:none;transform:none;clip-path:none}}

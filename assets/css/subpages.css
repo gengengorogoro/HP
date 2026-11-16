@@ -1,0 +1,12 @@
+/* Shared foundations for detail pages: homepage tokens, navigation and CTA. */
+.detail-page .breadcrumb { display:flex; flex-wrap:wrap; gap:14px; padding-top:30px; font-size:.75rem; color:var(--muted); }
+.breadcrumb a { padding-block:8px; }
+.detail-page .main-nav [aria-current="page"] { border-bottom:1px solid var(--brand-dark); }
+.detail-page .detail-consultation { padding-block:var(--section-space); }
+.detail-page .feature-meta { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; margin-top:32px; font-size:.875rem; }
+.detail-page .reading-details__body h3 { font-size:1.125rem; margin-block:25px 15px; }
+.detail-page section[id],.detail-page nav[id] { scroll-margin-top:calc(var(--header-height) + 24px); }
+@media(max-width:700px) {
+ .detail-page .breadcrumb { padding-top:16px; }
+ .detail-page .detail-consultation { padding-bottom:65px; }
+}

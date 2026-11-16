@@ -1,0 +1,102 @@
+/* 校舎紹介：所在地と利用時間を、写真・余白・罫線で整理する。 */
+.gallery-schools .school-hero{padding:12px 7% 90px;max-width:1440px;margin-inline:auto}
+.school-breadcrumb{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-bottom:48px}
+.school-hero-heading{text-align:center}
+.school-hero-heading .section-label{justify-content:center;margin-bottom:26px}
+.school-hero-heading h1{font-size:clamp(36px,4.4vw,60px);line-height:1.7;letter-spacing:.045em}
+.school-hero-heading h1>span,.school-access-lead>span{display:inline-block;max-width:100%}
+.school-hero-lead{font-family:var(--font);font-size:21px;line-height:2;margin:26px auto 0;max-width:34em}
+.school-hero-photo{max-width:600px;margin:44px auto 0}
+.school-hero-photo picture{display:block;aspect-ratio:1.7;overflow:hidden;animation:gallery-photo-open 1.65s var(--ease) .15s both}
+.school-hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 65%;animation:gallery-photo-settle 1.65s var(--ease) .15s both}
+.school-hero-photo figcaption{font-size:13px;color:var(--muted);margin-top:12px}
+.school-hero-body{max-width:36em;margin:32px auto 0;color:var(--muted);text-align:center;font-size:16px;line-height:2.1}
+.school-selector{margin:55px auto 0;max-width:1080px}
+.school-selector>div{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.school-selector-link{display:flex;flex-direction:column;align-items:flex-start;border-top:1px solid var(--line);padding:30px 0 26px}
+.school-selector-name{font-size:38px;line-height:1.7;margin:12px 0 14px}
+.school-selector-access{font-family:var(--sans);font-size:16px;color:var(--muted)}
+.school-selector-more{display:flex;align-items:center;gap:25px;font-size:15px;margin-top:26px}
+.school-selector-more>span{transition:transform .4s var(--ease)}
+.school-selector-link:hover .school-selector-more>span,.school-selector-link:focus-visible .school-selector-more>span{transform:translateY(4px)}
+.school-common-hours{max-width:1080px;margin:32px auto 0;padding-top:36px;border-top:1px solid var(--line)}
+.school-common-label{font-size:16px;color:var(--muted);margin-bottom:20px}
+.school-hours{font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px}
+.school-hours>div{display:grid;grid-template-columns:175px minmax(0,1fr);align-items:baseline;gap:20px}
+.school-hours>div+div{margin-top:16px}
+.school-hours dt{color:var(--muted)}
+.school-hours dd{margin:0}
+.school-common-hours .school-hours{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.school-common-hours .school-hours>div{display:block}
+.school-common-hours .school-hours>div+div{margin-top:0}
+.school-common-hours .school-hours dd{font-size:clamp(26px,3vw,40px);letter-spacing:-.025em;line-height:1.7;margin-top:10px}
+.school-hours-note{font-size:14px;color:var(--muted);margin-top:23px}
+.school-detail-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:9%}
+.school-detail-heading .section-label{margin-bottom:36px}
+.school-detail-heading .eyebrow{margin-bottom:12px}
+.gallery-schools .school-detail-heading h2{font-size:52px;line-height:1.6;margin:0}
+.school-access-lead{font-family:var(--font);font-size:23px;line-height:2;margin-top:28px;max-width:17em}
+.school-campus-photo{width:100%;max-width:440px;margin:32px 0 0}
+.school-campus-photo picture,.school-photo-placeholder{display:block;aspect-ratio:4/3;overflow:hidden}
+.school-campus-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--school-photo-position,center)}
+.school-photo-placeholder{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.36);border:1px solid #d9d2c8}
+.school-photo-placeholder>span{font-family:var(--font);font-size:20px;letter-spacing:.12em;color:var(--muted)}
+.school-campus-photo figcaption{font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:12px}
+.school-detail-copy{padding-top:86px}
+.school-access-info{font-size:16px}
+.school-access-info>div{padding-bottom:30px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.school-access-info dt{color:var(--muted);font-size:14px;margin-bottom:10px}
+.school-access-info dd{margin:0}
+.school-postcode{display:block;font-variant-numeric:tabular-nums;margin-bottom:5px}
+.school-access-info address{font-style:normal;font-size:17px;line-height:2}
+.school-access-info ul{list-style:none;padding:0;margin:0}
+.school-access-info li+li{margin-top:12px}
+.school-detail-links{display:flex;flex-wrap:wrap;gap:6px 32px;margin-top:27px}
+.gallery-schools .school-detail-links .text-link{font-size:15px}
+.school-consultation-body{max-width:35em;margin-inline:auto}
+.gallery-schools .school-reservation{max-width:35em;margin:32px auto 0;color:var(--muted)}
+.school-consultation .text-link{margin-top:18px}
+@media(max-width:1024px){.school-detail-layout{gap:6%;grid-template-columns:.8fr 1.2fr}.school-hours>div{grid-template-columns:1fr;gap:4px}.school-detail-copy{padding-top:82px}.school-selector>div,.school-common-hours .school-hours{gap:40px}}
+@media(max-width:760px){
+ .gallery-schools .school-hero{padding:16px 24px 70px}
+ .school-breadcrumb{margin-bottom:36px}
+ .school-hero-heading .section-label{margin-bottom:22px}
+ .school-hero-heading h1{font-size:clamp(31px,7.6vw,46px);line-height:1.85;letter-spacing:.035em;max-width:12em;margin-inline:auto;word-break:normal}
+ .school-hero-lead{font-size:19px;margin-top:22px;max-width:23em}
+ .school-hero-photo{width:90%;max-width:440px;margin-top:32px}
+ .school-hero-photo picture{aspect-ratio:4/3}
+ .school-hero-photo img{object-position:center 70%}
+ .school-hero-body{margin-top:25px;text-align:left}
+ .school-selector{margin-top:36px}
+ .school-selector>div{grid-template-columns:1fr;gap:18px}
+ .school-selector-link{padding:26px 0 22px}
+ .school-selector-name{font-size:34px;margin:10px 0 12px}
+ .school-selector-more{font-size:15px;margin-top:20px}
+ .school-common-hours{margin-top:25px;padding-top:28px}
+ .school-common-hours .school-hours{grid-template-columns:1fr;gap:22px}
+ .school-common-hours .school-hours dd{font-size:31px;margin-top:4px}
+ .school-common-label{margin-bottom:18px}
+ .school-hours-note{font-size:14px;margin-top:20px}
+ .school-detail-layout{display:block}
+ .school-detail-heading .section-label{margin-bottom:26px}
+ .gallery-schools .school-detail-heading h2{font-size:40px}
+ .school-access-lead{font-size:22px;margin-top:22px;max-width:23em}
+ .school-campus-photo{margin-top:26px}
+ .school-detail-copy{padding-top:32px}
+ .school-access-info address{font-size:16px}
+ .school-access-info>div{padding-bottom:24px;margin-bottom:24px}
+ .school-hours>div{grid-template-columns:1fr;gap:4px}
+ .school-detail-links{flex-direction:column;align-items:flex-start;gap:4px;margin-top:23px}
+ .gallery-schools .school-reservation{margin-top:28px}
+}
+@media(prefers-reduced-motion:reduce){.school-hero-photo picture,.school-hero-photo img{animation:none}.school-selector-more>span{transition:none;transform:none!important}}
+
+/* 校舎の追加写真：広い余白と自然な比率を保ち、スマホでは縦に並べる。 */
+.school-campus-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;max-width:1080px;margin:48px auto 0}
+.school-gallery-photo{min-width:0;margin:0}
+.school-gallery-photo picture{display:block;overflow:hidden}
+.school-gallery-photo img{display:block;width:100%;height:auto}
+.school-gallery-photo figcaption{font-family:var(--sans);font-size:14px;color:var(--muted);line-height:1.8;margin-top:12px}
+@media(max-width:760px){.school-campus-gallery{grid-template-columns:minmax(0,1fr);gap:30px;margin-top:36px}}
+
+.school-campus-gallery-single{grid-template-columns:minmax(0,1fr);max-width:360px;margin:36px 0 0}

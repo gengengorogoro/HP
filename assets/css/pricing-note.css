@@ -1,0 +1,58 @@
+/* 料金ページ。コースタブ・CTA・配色・書体・動きはhome-noteを共用。 */
+.pricing-hero{display:grid;grid-template-columns:1.35fr 1fr;gap:0 60px;padding:30px 6% 46px;align-items:end}
+.pricing-breadcrumb{grid-column:1/-1;display:flex;gap:18px;font-size:11px;color:var(--muted);margin-bottom:36px}
+.pricing-hero-heading .section-label{margin-bottom:22px}
+.pricing-hero h1{font-size:clamp(45px,6vw,88px);line-height:1.5;letter-spacing:.03em}
+.pricing-hero-copy{padding-left:34px;border-left:1px solid var(--line)}
+.pricing-hero-lead{font-size:24px;line-height:1.9}
+.pricing-hero-copy>p:not(.pricing-hero-lead){font-size:14px;line-height:2.1;color:var(--muted);margin-top:16px}
+.pricing-hero-copy>.pricing-tax{font-size:12px!important;margin-top:20px!important;color:#38675f!important}
+.pricing-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);padding:0 6%}
+.pricing-index a{display:flex;align-items:center;gap:15px;padding:22px 18px;font-size:12px;transition:background .3s}
+.pricing-index a:first-child{padding-left:0}.pricing-index a+a{border-left:1px solid var(--line)}
+.pricing-index a:hover{background:var(--tint)}.pricing-index small{font-size:11px;color:#38675f}.pricing-index a>span{margin-left:auto;color:var(--accent)}
+.pricing-plans .pricing-tab-fee{font-size:14px;color:var(--muted);margin-top:12px}
+.pricing-plans .pricing-meeting{font-size:15px!important;color:#38675f!important;border-top:1px solid var(--line);padding-top:17px;margin-top:24px}
+.pricing-comparison{margin-top:25px;border-bottom:1px solid var(--line)}
+.pricing-comparison summary{font-size:14px}
+.pricing-comparison table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;margin-bottom:24px;table-layout:fixed}
+.pricing-comparison th,.pricing-comparison td{font-weight:400;text-align:left;padding:17px 20px;border-top:1px solid var(--line);overflow-wrap:anywhere}
+.pricing-comparison th:first-child{width:34%;padding-left:0}
+.pricing-comparison thead th{font-size:13px;color:var(--muted)}
+.pricing-comparison td{border-left:1px solid var(--line)}
+.pricing-comparison td:last-child{background:var(--tint)}
+.pricing-online-note{font-size:13px;color:var(--muted);margin-top:25px}
+.pricing-lesson-fees{display:grid;grid-template-columns:1fr 1fr;margin-top:30px;border-block:1px solid var(--line)}
+.pricing-lesson-fees>div{padding:28px 35px 30px 0}
+.pricing-lesson-fees>div+div{padding-left:35px;border-left:1px solid var(--line)}
+.pricing-lesson-fees h3{font-size:16px;color:var(--muted);margin-bottom:16px}
+.pricing-lesson-fees p{font-size:clamp(21px,2.2vw,33px)}
+.pricing-discount{margin-top:38px;padding:30px 35px;background:var(--tint);border-left:2px solid var(--mint)}
+.pricing-discount>p:first-child{font-size:14px;color:var(--muted)}
+.pricing-discount h3{font-size:clamp(25px,2.5vw,36px);margin-top:10px}
+.pricing-discount-fees{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:25px;padding-top:23px;border-top:1px solid var(--line)}
+.pricing-discount-fees p>span{display:block;font-size:12px;color:var(--muted)}
+.pricing-discount-fees strong{font-weight:400;font-size:35px;line-height:1.7;display:block;margin-top:8px;letter-spacing:-.02em}
+.pricing-discount-fees small{font-size:12px;letter-spacing:0;margin-left:8px;white-space:nowrap}
+.pricing-discount-fees p>span:last-child{font-size:13px}
+.pricing-discount-note{font-size:12px;line-height:2;color:var(--muted);margin-top:23px}
+.pricing-other-rows{margin-top:45px;border-bottom:1px solid var(--line)}
+.pricing-other-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;border-top:1px solid var(--line);padding:32px 0}
+.pricing-other-row .eyebrow{color:#38675f;margin-bottom:15px}
+.pricing-other-row h3{font-size:26px;max-width:17em}
+.pricing-other-title{font-size:14px;color:var(--muted);margin-top:16px}
+.pricing-other-price{font-size:29px;line-height:1.8}
+.pricing-fee-note{font-size:12px;color:var(--muted);margin-top:6px}
+.pricing-other-body{font-size:15px;color:var(--muted);line-height:2.1;margin-top:20px}
+.pricing-other-row .text-link{font-size:13px;margin-top:15px}
+.pricing-extra-fees{margin:40px 0 0;border-top:1px solid var(--line)}
+.pricing-extra-fees>div{display:grid;grid-template-columns:1fr 1fr;gap:60px;border-bottom:1px solid var(--line);padding:24px 0;align-items:baseline}
+.pricing-extra-fees dt{font-size:19px}.pricing-extra-fees dd{margin:0;font-size:29px}.pricing-extra-fees small{font-size:12px;color:var(--muted);margin-left:18px}
+@media(max-width:1279px){.pricing-hero{gap:0 35px}.pricing-hero-copy{padding-left:25px}.pricing-hero-lead{font-size:21px}.pricing-index{grid-template-columns:1fr 1fr}.pricing-index a:nth-child(3){border-left:0;padding-left:0}.pricing-index a:nth-child(n+3){border-top:1px solid var(--line)}.pricing-other-row{gap:35px}.pricing-other-row h3{font-size:24px}}
+@media(max-width:900px) and (min-width:761px){.pricing-hero{grid-template-columns:1fr 1fr;gap:0 25px}.pricing-hero h1{font-size:46px}.pricing-hero-lead{font-size:19px}.pricing-hero-copy>p:not(.pricing-hero-lead){font-size:13px}.pricing-lesson-fees p{font-size:23px}.pricing-discount{padding:28px}.pricing-discount-fees{gap:20px}.pricing-discount-fees strong{font-size:30px}.pricing-discount-fees small{display:block;margin-left:0}.pricing-other-price{font-size:25px}.pricing-comparison thead th{font-size:11px}}
+@media(max-width:760px){.pricing-hero{display:block;padding:22px 22px 30px}.pricing-breadcrumb{font-size:10px;gap:12px;margin-bottom:26px}.pricing-hero-heading .section-label{margin-bottom:20px}.pricing-hero h1{font-size:clamp(35px,10vw,55px)}.pricing-hero-copy{padding:0;border:0;margin-top:25px}.pricing-hero-lead{font-size:21px;line-height:1.9}.pricing-hero-copy>p:not(.pricing-hero-lead){font-size:14px;margin-top:16px}.pricing-hero-copy>.pricing-tax{font-size:11px!important;margin-top:16px!important}.pricing-index{padding:0 22px}.pricing-index a{font-size:11px;padding:16px 0;gap:10px}.pricing-index a:nth-child(2n){padding-left:12px}.pricing-index small{font-size:10px}.pricing-index a>span{display:none}.pricing-plans .course-tabs button{padding:18px 12px}.pricing-plans .course-tabs button>span{font-size:clamp(11px,3.25vw,17px)}.pricing-plans .course-tabs button>small:not(.pricing-tab-fee){font-size:11px}.pricing-plans .pricing-tab-fee{font-size:12px;margin-top:12px}.pricing-plans .pricing-meeting{font-size:14px!important;margin-top:19px}.pricing-comparison summary{font-size:12px}.pricing-comparison table{font-size:12px}.pricing-comparison th,.pricing-comparison td{padding:14px 9px}.pricing-comparison th:first-child{width:31%}.pricing-comparison thead th{font-size:12px;letter-spacing:0}.pricing-comparison thead th:first-child{font-size:11px}.pricing-online-note{font-size:12px;margin-top:20px}.pricing-lesson-fees{display:block;margin-top:25px}.pricing-lesson-fees>div,.pricing-lesson-fees>div+div{padding:23px 0;border-left:0}.pricing-lesson-fees>div+div{border-top:1px solid var(--line)}.pricing-lesson-fees h3{font-size:14px;margin-bottom:12px}.pricing-lesson-fees p{font-size:24px}.pricing-discount{padding:24px 20px;margin-top:28px}.pricing-discount>p:first-child{font-size:12px}.pricing-discount h3{font-size:24px;margin-top:12px}.pricing-discount-fees{grid-template-columns:1fr;gap:22px;margin-top:22px;padding-top:20px}.pricing-discount-fees p>span{font-size:11px}.pricing-discount-fees strong{font-size:33px}.pricing-discount-fees small{font-size:11px;margin-left:7px}.pricing-discount-fees p>span:last-child,.pricing-discount-note{font-size:11px}.pricing-other-rows{margin-top:28px}.pricing-other-row{grid-template-columns:1fr;gap:22px;padding:27px 0}.pricing-other-row h3{font-size:24px}.pricing-other-row .eyebrow{margin-bottom:12px}.pricing-other-title{font-size:13px;margin-top:12px}.pricing-other-price{font-size:25px}.pricing-other-body{font-size:14px;margin-top:16px}.pricing-other-row .text-link{font-size:12px;margin-top:12px}.pricing-extra-fees{margin-top:28px}.pricing-extra-fees>div{grid-template-columns:1fr;gap:10px;padding:22px 0}.pricing-extra-fees dt{font-size:16px}.pricing-extra-fees dd{font-size:27px}.pricing-extra-fees small{font-size:11px;margin-left:14px}}
+@media(max-width:360px){.pricing-hero,.pricing-index{padding-inline:18px}.pricing-index a{font-size:10px;gap:8px}.pricing-index a:nth-child(2n){padding-left:10px}.pricing-plans .course-tabs button{padding-inline:9px}.pricing-plans .pricing-tab-fee{font-size:11px}.pricing-lesson-fees p{font-size:21px}.pricing-discount{padding-inline:16px}.pricing-discount h3{font-size:22px}.pricing-discount-fees small{display:block;margin:0}.pricing-other-price{font-size:23px}}
+
+.pricing-plans .course-detail h3{word-break:keep-all;overflow-wrap:anywhere}
+
+.pricing-discount h3{word-break:keep-all}.pricing-discount-amount{display:inline-block}

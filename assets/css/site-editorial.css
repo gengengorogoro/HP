@@ -1,0 +1,174 @@
+/* 共通の仕上げ：温かい紙色、明朝体、写真、細い罫線。全7ページで共用する。 */
+body.gallery-home{--line:#d8d0c5;--muted:#5f6d77;background:#f3ede3;color:#11273c;-webkit-font-smoothing:antialiased}
+body.gallery-home .header{border-bottom:1px solid #e3dbcf}
+body.gallery-home .section{padding-block:112px}
+body.gallery-home h1,body.gallery-home h2{text-wrap:balance}
+body.gallery-home .section-top{max-width:1120px;margin-inline:auto}
+body.gallery-home .section-top>.section-label{font-family:var(--font);font-size:18px;font-weight:500;line-height:1.9;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
+body.gallery-home .section-top>.section-label>span{font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:.08em;color:var(--muted)}
+body.gallery-home .section-top>h2{font-size:clamp(32px,3.4vw,46px);font-weight:500;line-height:1.8;letter-spacing:.035em}
+body.gallery-home .section-top>p:not(.section-label){font-size:16px;line-height:2.1;max-width:40em;margin-inline:auto}
+body.gallery-home .eyebrow{letter-spacing:.14em}
+body.gallery-home .contact{transition:background-color .25s ease,color .25s ease,transform .25s ease}
+body.gallery-home .contact:hover{transform:translateY(-2px)}
+body.gallery-home :is(a,button,summary):focus-visible{outline:2px solid #11273c;outline-offset:5px}
+body.gallery-home .closing{border-top:1px solid var(--line);background:transparent}
+body.gallery-home .closing>div{max-width:1080px;margin-inline:auto}
+body.gallery-home .closing h2{font-size:clamp(30px,3.4vw,46px);font-weight:500;line-height:1.85}
+body.gallery-home .footer{border-top:1px solid var(--line)}
+/* 説明の長さではなく、サービスの要点を最初に見せる。 */
+.service-value-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;max-width:1000px;margin:48px auto 0;padding:0}
+.service-value-strip>div{min-width:0;border-top:1px solid var(--line);padding-top:22px}
+.service-value-strip dt{font-family:var(--sans);font-size:12px;line-height:1.8;color:var(--muted);letter-spacing:.055em;margin-bottom:10px}
+.service-value-strip dd{font-family:var(--font);font-size:19px;font-weight:500;line-height:1.85;color:var(--ink);margin:0;overflow-wrap:anywhere}
+/* 料金：面談の実写と、選択するサポートの説明を対にする。 */
+body.gallery-pricing .pricing-hero{max-width:1240px;padding:30px 5% 90px}
+body.gallery-pricing .pricing-hero-copy{margin-top:28px;max-width:42em}
+.editorial-pricing-intro{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:70px;align-items:center;max-width:1000px;margin:52px auto 0}
+.editorial-pricing-intro figure{margin:0;min-width:0}
+.editorial-pricing-intro picture{display:block}
+.editorial-pricing-intro img{display:block;width:100%;height:auto}
+.editorial-pricing-intro figcaption{font-family:var(--sans);font-size:12px;line-height:1.8;color:var(--muted);margin-top:13px}
+.editorial-pricing-intro>div{min-width:0}
+.editorial-pricing-intro .eyebrow{font-size:10px;color:var(--muted);margin-bottom:18px}
+.editorial-pricing-intro h2{font-family:var(--font);font-size:32px;font-weight:500;line-height:1.85;margin:0 0 20px;letter-spacing:.035em}
+.editorial-pricing-intro p:not(.eyebrow){font-family:var(--sans);font-size:16px;line-height:2.1;color:var(--muted)}
+.editorial-pricing-intro .editorial-plan-note{font-size:14px!important;color:var(--ink)!important;margin-top:20px}
+.editorial-pricing-intro .text-link{font-size:15px;margin-top:18px}
+body.gallery-home .course-tabs{border-bottom:1px solid var(--line);gap:0}
+body.gallery-home .course-tabs button{background:transparent;border-radius:0;border:0;border-bottom:2px solid transparent;padding:24px 28px;color:var(--muted);min-width:0}
+body.gallery-home .course-tabs button[aria-selected=true]{background:#f9f6f0;border-bottom-color:var(--ink);color:var(--ink)}
+body.gallery-home .course-detail{padding:42px;background:rgba(255,255,255,.27);border-bottom:1px solid var(--line);gap:45px}
+body.gallery-home .course-detail>div{min-width:0}
+body.gallery-home .course-right{padding-left:36px;border-color:var(--line)}
+body.gallery-home .course-detail h3{font-family:var(--font);font-size:29px;font-weight:500;line-height:1.8}
+body.gallery-home .price{font-variant-numeric:tabular-nums}
+body.gallery-home .price strong{font-size:clamp(52px,4.8vw,68px);font-weight:400;letter-spacing:-.035em}
+body.gallery-pricing .pricing-meeting{font-family:var(--font);font-size:18px;line-height:1.9;padding:20px 0 0;margin-top:24px;border-top:1px solid var(--line);color:var(--ink)}
+body.gallery-pricing .pricing-other-row{position:relative;gap:65px;padding-block:46px}
+.anchor-alias{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;scroll-margin-top:120px}
+body.gallery-pricing .pricing-other-row .pricing-other-price{font-size:38px;line-height:1.6;font-weight:400;letter-spacing:-.02em}
+body.gallery-pricing #management-only .pricing-fee-note{display:inline-block;font-family:var(--font);font-size:16px;padding-bottom:8px;border-bottom:1px solid var(--line);margin-top:14px}
+body.gallery-pricing .pricing-other-title{color:var(--muted)}
+body.gallery-pricing .pricing-index a{font-size:15px;line-height:1.9;white-space:normal}
+body.gallery-pricing .pricing-extra-fees>div{padding-block:32px}
+body.gallery-pricing .pricing-discount{padding-block:38px}
+/* 校舎：写真と説明に独立した余白を与える。 */
+body.gallery-schools .school-hero{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:38px 64px;max-width:1240px;padding:30px 5% 90px}
+body.gallery-schools .school-breadcrumb{grid-column:1/-1;margin-bottom:0}
+body.gallery-schools .school-hero-heading{grid-column:1/-1;margin-bottom:4px}
+body.gallery-schools .school-hero-photo{grid-column:1;width:100%;max-width:none;margin:0}
+body.gallery-schools .school-hero-photo picture{aspect-ratio:4/3}
+body.gallery-schools .school-hero-body{grid-column:2;align-self:center;max-width:30em;margin:0;font-size:16px;line-height:2.2;text-align:left}
+body.gallery-schools .school-common-hours{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:32px}
+body.gallery-schools .school-detail-heading .school-access-lead{font-size:22px;color:var(--muted)}
+body.gallery-schools .school-campus-photo figcaption,body.gallery-schools .school-gallery-photo figcaption{font-size:12px;letter-spacing:.025em}
+/* Junior・家庭教師：既存の説明を保ち、要点と料金の階層を揃える。 */
+body.gallery-junior .junior-hero,body.gallery-tutor .tutor-hero{max-width:1240px;padding:30px 5% 90px}
+body.gallery-junior .junior-hero-layout,body.gallery-tutor .tutor-hero-layout{max-width:1000px;margin-inline:auto;gap:70px}
+body.gallery-junior .junior-hero-photo img,body.gallery-tutor .tutor-hero-photo img{object-fit:contain}
+body.gallery-junior .junior-support-row,body.gallery-tutor .tutor-support-row{padding-block:40px;gap:34px}
+body.gallery-junior .junior-steps h3,body.gallery-tutor .tutor-approach-point h3{font-weight:500;letter-spacing:.025em}
+body.gallery-junior .junior-price-block,body.gallery-tutor .tutor-price-block{padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+body.gallery-junior .junior-amount strong,body.gallery-tutor .tutor-amount strong{font-weight:400;font-variant-numeric:tabular-nums}
+body.gallery-features .feature-meeting{border-color:var(--line)}
+.management-format{font-family:var(--sans);font-size:14px;line-height:2;color:var(--muted);text-align:center;margin-top:20px}
+body.gallery-features .feature-reading,body.gallery-instructors .instructors-reading{border-color:var(--line)}
+body.gallery-home .instructor-support-summary strong{font-weight:500}
+@media(min-width:761px) and (max-width:1100px){
+ .editorial-pricing-intro{gap:40px;grid-template-columns:minmax(0,.9fr) minmax(0,1fr)}
+ body.gallery-home .course-detail{padding:32px;gap:30px}
+ body.gallery-home .course-right{padding-left:25px}
+ body.gallery-home .course-detail h3{font-size:25px}
+ body.gallery-schools .school-hero{gap:32px 36px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.gallery-junior .junior-hero-layout,body.gallery-tutor .tutor-hero-layout{gap:40px}
+ .service-value-strip{gap:24px}
+ .service-value-strip dd{font-size:18px}
+}
+@media(max-width:760px){
+ body.gallery-home .section{padding-block:80px}
+ body.gallery-home .section-top>.section-label{font-size:16px;line-height:1.9;margin-bottom:22px}
+ body.gallery-home .section-top>.section-label>span{font-size:11px}
+ body.gallery-home .section-top>h2{font-size:clamp(28px,7vw,36px);line-height:1.85;letter-spacing:.025em}
+ body.gallery-home .section-top>p:not(.section-label){font-size:16px;line-height:2.1}
+ body.gallery-home .closing h2{font-size:clamp(27px,7vw,36px);line-height:1.9}
+ body.gallery-pricing .pricing-hero,body.gallery-junior .junior-hero,body.gallery-tutor .tutor-hero{padding:25px 24px 70px}
+ .editorial-pricing-intro{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:36px;max-width:480px}
+ .editorial-pricing-intro h2{font-size:28px}
+ .editorial-pricing-intro figure{width:88%;margin-inline:auto}
+ .editorial-pricing-intro figcaption{font-size:12px}
+ body.gallery-home .course-tabs button{padding:19px 12px}
+ body.gallery-home .course-detail{padding:28px 20px;gap:0}
+ body.gallery-home .course-detail h3{font-size:25px}
+ body.gallery-home .course-right{border-left:0;padding:26px 0 0;margin-top:26px;border-top:1px solid var(--line)}
+ body.gallery-home .price strong{font-size:54px}
+ body.gallery-pricing .pricing-other-row{gap:22px;padding-block:32px}
+ body.gallery-pricing .pricing-other-row h3{font-size:26px;line-height:1.8}
+ body.gallery-pricing .pricing-other-row .pricing-other-price{font-size:32px}
+ body.gallery-pricing .pricing-index a{font-size:14px;line-height:1.85}
+ body.gallery-schools .school-hero{display:block;padding:25px 24px 70px}
+ body.gallery-schools .school-breadcrumb{margin-bottom:36px}
+ body.gallery-schools .school-hero-heading{margin-bottom:30px}
+ body.gallery-schools .school-hero-photo{width:90%;max-width:440px;margin:0 auto}
+ body.gallery-schools .school-hero-body{max-width:35em;margin:28px auto 0}
+ body.gallery-junior .junior-hero-layout,body.gallery-tutor .tutor-hero-layout{gap:30px}
+ body.gallery-junior .junior-support-row,body.gallery-tutor .tutor-support-row{gap:16px;padding-block:30px}
+ body.gallery-junior .junior-price-block,body.gallery-tutor .tutor-price-block{padding:28px 0}
+ .service-value-strip{grid-template-columns:1fr;gap:0;margin-top:30px}
+ .service-value-strip>div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:17px 0}
+ .service-value-strip dt{margin:0;font-size:12px}
+ .service-value-strip dd{font-size:17px;line-height:1.85}
+ .management-format{font-size:13px;text-align:left}
+}
+@media(max-width:360px){
+ body.gallery-home .section{padding-inline:20px}
+ body.gallery-pricing .pricing-hero,body.gallery-schools .school-hero,body.gallery-junior .junior-hero,body.gallery-tutor .tutor-hero{padding-inline:20px}
+ .service-value-strip>div{grid-template-columns:minmax(0,1fr);gap:5px}
+ body.gallery-home .price strong{font-size:48px}
+}
+@media(prefers-reduced-motion:reduce){body.gallery-home .contact{transition:none}body.gallery-home .contact:hover{transform:none}}
+
+/* 受講条件は価格と同じ場所で、スマホでも読める大きさにする。 */
+body.gallery-home .lesson-condition{font-family:var(--sans);font-size:14px!important;line-height:1.9!important;color:var(--muted);margin-top:14px;overflow-wrap:anywhere}
+body.gallery-home .lesson-condition-center{text-align:center;max-width:900px;margin:20px auto 0}
+body.gallery-home .fee-list .lesson-condition{font-size:13px!important;margin-top:7px}
+@media(max-width:760px){body.gallery-home .lesson-condition-center{text-align:left}}
+
+/* 小さい画面では数字と受講単位、見出しの意味のまとまりを保つ。 */
+.keep-together{white-space:nowrap}
+.heading-phrase{display:inline-block;max-width:100%}
+body.gallery-pricing .pricing-tab-fee>span{display:inline-block;white-space:nowrap}
+@media(max-width:760px){
+ body.gallery-pricing .pricing-tab-fee>.tab-price-amount{display:block;font-size:21px;line-height:1.7}
+ body.gallery-pricing .pricing-tab-fee>.tab-price-period{display:block;font-size:13px;line-height:1.8}
+ body.gallery-home .tutor-amount{gap:8px 14px}
+ body.gallery-home .tutor-amount>span:first-child{flex-basis:100%;font-size:18px}
+ body.gallery-home .tutor-amount .tutor-tax{margin-left:0}
+}
+
+/* Three tuition plans: comfortable targets without squeezing labels on phones. */
+@media(max-width:760px){
+ body.gallery-home .course-tabs{display:grid;grid-template-columns:minmax(0,1fr)}
+ body.gallery-home .course-tabs button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:18px 20px;min-height:88px;text-align:left;border-left:0}
+ body.gallery-home .course-tabs button+button{border-top:1px solid var(--line);border-left:0}
+ body.gallery-home .course-tabs button>span{grid-column:1;font-size:19px;letter-spacing:.04em}
+ body.gallery-home .course-tabs button>small:not(.pricing-tab-fee){grid-column:1;margin-top:3px;font-size:13px;line-height:1.8}
+ body.gallery-pricing .pricing-plans .course-tabs .pricing-tab-fee{grid-column:2;grid-row:1/3;align-self:center;margin:0;text-align:right}
+ body.gallery-pricing .pricing-tab-fee>.tab-price-amount{font-size:20px}
+ body.gallery-pricing .pricing-plans .course-tabs button>span{font-size:19px}
+ body.gallery-home .pricing-comparison-scroll{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+ body.gallery-pricing .pricing-comparison-scroll table{min-width:680px;width:100%;table-layout:fixed;font-size:15px}
+ body.gallery-pricing .pricing-comparison-scroll th:first-child{width:28%}
+ body.gallery-pricing .pricing-comparison-scroll th,body.gallery-pricing .pricing-comparison-scroll td{padding:18px 16px;overflow-wrap:anywhere}
+ body.gallery-pricing .pricing-comparison-scroll thead th{font-size:13px}
+ body.gallery-pricing .pricing-discount-fees{grid-template-columns:minmax(0,1fr)}
+ body.gallery-junior .junior-amount strong,body.gallery-tutor .tutor-amount strong{white-space:nowrap}
+}
+.comparison-scroll-hint{display:none}
+@media(max-width:760px){.comparison-scroll-hint{display:block;font-size:13px;color:var(--muted);margin:0 0 15px}}
+
+/* Application form is primary; LINE remains a separate consultation link. */
+body.gallery-home .closing .consultation-line-link{display:flex;justify-content:center;width:fit-content;max-width:100%;min-height:48px;margin:18px auto 0;font-size:16px}
+
+/* Official wordmark; preserve intrinsic ratio. */
+.brand .brand-logo{display:block;width:200px;max-width:100%;height:auto;mix-blend-mode:multiply}.brand{flex-shrink:0}.footer .brand-logo{width:200px}@media(max-width:760px){.brand .brand-logo{width:156px}.footer .brand-logo{width:170px}}@media(max-width:360px){.brand .brand-logo{width:138px}}
