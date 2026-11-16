@@ -1,0 +1,271 @@
+/* Gallery: トップ・下層ページで共用するテーマ。構成・原稿・リンク・JSは既存部品を使用する。 */
+.gallery-home{--paper:#f3ede3;--ink:#11273c;--muted:#5f6d77;--line:#e0e5e9;--accent:#11273c;--mint:#e0e5e9;--tint:var(--paper);--rail:0px;--sans:'Zen Kaku Gothic New','Yu Gothic',YuGothic,Meiryo,sans-serif;color:var(--ink);background:var(--paper);font-family:var(--sans);font-size:16px;line-height:2.1;letter-spacing:.025em}
+.gallery-home h1,.gallery-home h2,.gallery-home h3,.gallery-home .brand,.gallery-home nav,.gallery-home button,.gallery-home .contact,.gallery-home .text-link,.gallery-home summary{font-family:var(--font);font-weight:400}
+.gallery-home h2{font-size:clamp(32px,3.1vw,46px);line-height:1.8;letter-spacing:.05em}
+.gallery-home main{max-width:none;margin-left:0}
+.gallery-home .header{height:176px;margin-left:0;border:0;padding:25px 5% 22px;display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto;gap:25px 20px;align-items:center}
+.gallery-home .header>.brand{grid-column:2;grid-row:1;text-align:center;font-size:44px;letter-spacing:-1.6px}
+.gallery-home .brand span{font-size:10px;letter-spacing:.18em;margin-top:9px}
+.gallery-home .desktop-nav{grid-column:1/-1;grid-row:2;justify-content:center;margin:0;gap:32px;font-size:15px;white-space:normal}
+.gallery-home .desktop-nav a{padding:6px 0}
+.gallery-home .desktop-nav a:after{bottom:0;background:var(--line)}
+.gallery-home .header-contact{position:absolute;right:5%;top:45px;font-size:14px;min-height:54px;padding:14px 26px;gap:15px}
+.gallery-home .menu-button{display:none}
+.gallery-home .contact{border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:#fff;min-height:56px;padding:16px 28px;font-size:16px;line-height:1.8;transition:background .4s,border-color .4s,color .4s}
+.gallery-home .contact:hover,.gallery-home .contact:focus-visible{background:#294359;border-color:#294359}
+.gallery-home .contact>span{transition:none}
+.gallery-home .contact:hover>span,.gallery-home .contact:focus-visible>span{transform:none;text-shadow:none}
+.gallery-home .contact svg{color:inherit;width:26px}
+.gallery-home .contact:hover svg,.gallery-home .contact:focus-visible svg{transform:none}
+.gallery-home .header-contact{font-size:14px;min-height:54px;padding:14px 26px}
+.gallery-home .text-link{font-size:16px;gap:22px;line-height:1.8;padding:13px 0;min-height:48px}
+.gallery-home .text-link>span{border:0!important}
+.gallery-home .text-link svg{display:none}
+.gallery-home .text-link:after{content:'';display:block;flex:0 0 auto;width:34px;height:1px;background:var(--muted);transition:width .4s var(--ease),background .4s}
+.gallery-home .text-link:hover:after,.gallery-home .text-link:focus-visible:after{width:48px;background:var(--ink)}
+.gallery-home .eyebrow{font-family:var(--sans);font-size:11px;color:var(--muted);letter-spacing:.18em}
+.gallery-home .hero{display:flex;flex-direction:column;align-items:center;padding:46px 5% 0;gap:0;max-width:1800px;margin:0 auto}
+.gallery-home .hero>.eyebrow{order:0;text-align:center;margin:0 0 28px}
+.gallery-home .hero h1{order:1;font-size:clamp(48px,5.5vw,80px);line-height:1.6;letter-spacing:.07em;white-space:normal;margin:0;text-align:center}
+.gallery-home .hero h1>.hero-char{color:var(--ink);animation-duration:1s;animation-delay:calc(.1s + var(--char-index)*.055s)}
+.gallery-home .hero-side{order:2;display:flex;align-items:center;border:0;padding:0;margin:30px 0 58px;text-align:center;width:100%;max-width:1000px}
+.gallery-home .hero-side:before{display:none}
+.gallery-home .hero-description{font-family:var(--font);font-size:22px;line-height:2;letter-spacing:.06em;max-width:none;word-break:normal}
+.gallery-home .hero-detail{font-family:var(--sans);font-size:16px;line-height:2.1;margin-top:16px;color:var(--muted)}
+.gallery-home .hero-actions{margin:26px 0 0;padding:0;display:flex;flex-direction:row;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px 32px;width:auto}
+.gallery-home .hero-actions .contact{font-size:15px;padding:15px 25px;width:auto;gap:18px}
+.gallery-home .hero-photo{order:3;height:auto;width:100%;aspect-ratio:auto;background:none;overflow:visible}
+.gallery-home .hero-photo picture{position:relative;width:100%;height:auto;aspect-ratio:1.6;overflow:hidden;clip-path:inset(0);animation:gallery-photo-open 1.65s var(--ease) .15s both}
+.gallery-home .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;animation:gallery-photo-settle 1.65s var(--ease) .15s both}
+.gallery-home .hero-photo:after{display:none}
+.gallery-home .hero-photo figcaption{position:static;color:var(--muted);font-family:var(--sans);font-size:14px;letter-spacing:.06em;text-shadow:none;text-align:left;margin-top:18px}
+.gallery-home .hero-bottom{order:4;width:100%;display:flex;flex-direction:row;justify-content:space-between;flex-wrap:wrap;gap:16px 26px;padding:22px 0 35px;font-family:var(--sans);font-size:13px;color:var(--muted)}
+.gallery-home .scroll{font-size:10px;letter-spacing:.18em;margin-left:auto}
+.gallery-home .scroll span:after{animation:none;top:0;background:var(--muted)}
+.gallery-home .section{padding:120px max(8%,calc((100vw - 1180px)/2));border-top:1px solid var(--line)}
+.gallery-home .section:before{display:none}
+.gallery-home .section-label{font-family:var(--sans);font-size:12px;letter-spacing:.1em;gap:16px;color:var(--muted)}
+.gallery-home .section-label>span{font-size:12px;font-family:var(--sans);font-style:normal;color:var(--muted)}
+.gallery-home .section-top{display:flex;flex-direction:column;align-items:center;gap:0;text-align:center}
+.gallery-home .section-top .section-label{margin-bottom:30px}
+.gallery-home .section-top h2{max-width:100%}
+.gallery-home .section-top h2 br,.gallery-home .teacher-header h2 br{display:none}
+.gallery-home .section-top>p{font-family:var(--sans);font-size:16px;padding:0;border:0;line-height:2.1;margin-top:26px;max-width:44em}
+.gallery-home .support .section-top{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:0 7%;text-align:left;align-items:start}
+.gallery-home .support .section-top .section-label{grid-column:1;grid-row:1;margin-top:13px;margin-bottom:0}
+.gallery-home .support .section-top h2{grid-column:2;grid-row:1;max-width:14em}
+.gallery-home .support .section-top h2 br{display:block}
+.gallery-home .support .section-top>p{grid-column:2;margin-top:28px;max-width:32em}
+.gallery-home .support-rows{margin:64px 0 0 12%;border-bottom:1px solid var(--line)}
+.gallery-home .support-row{grid-template-columns:70px minmax(0,1fr) minmax(0,1.1fr);gap:30px;padding:38px 0}
+.gallery-home .row-number>span,.gallery-home .service-number{color:var(--muted);font-family:var(--sans);font-size:12px}
+.gallery-home .row-number>p{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:10px}
+.gallery-home .support-row h3{font-size:23px;line-height:1.8;letter-spacing:.025em}
+.gallery-home .row-body>p,.gallery-home .service-row>div>p{font-family:var(--sans);font-size:16px;line-height:2.1;color:var(--muted)}
+.gallery-home .row-body .meta,.gallery-home .service-row .meta{font-size:14px;line-height:2;margin-top:18px;font-variant-numeric:tabular-nums}
+.gallery-home .row-body .text-link,.gallery-home .service-row .text-link{font-size:15px;margin-top:13px}
+.gallery-home .teacher-header{text-align:center}
+.gallery-home .teacher-header .section-label{justify-content:center;margin-bottom:30px}
+.gallery-home .teacher-layout{display:block;margin-top:55px}
+.gallery-home .teacher-photo{aspect-ratio:1.6;width:100%;margin:0;background:#fff}
+.gallery-home .teacher-photo img{object-position:center 45%}
+.gallery-home .teacher-copy{max-width:620px;width:60%;padding:0;border:0;margin:55px 0 0 auto}
+.gallery-home .teacher-copy>p{font-family:var(--sans);font-size:16px;line-height:2.2}
+.gallery-home .teacher-count{gap:22px;margin-bottom:30px;font-size:16px!important}
+.gallery-home .teacher-count>span{font-family:var(--sans);font-size:64px;font-weight:400;letter-spacing:-.04em}
+.gallery-home .teacher-count small{font-size:30px;color:var(--ink)}
+.gallery-home .teacher-copy>.text-link{margin-top:24px}
+.gallery-home .story{margin-top:28px}
+.gallery-home summary{font-size:16px;padding:22px 0;gap:20px;min-height:56px;line-height:2}
+.gallery-home summary>span{color:var(--muted);transition:none}
+.gallery-home details[open]>summary>span{transform:none}
+.gallery-home .story>p{font-family:var(--sans);font-size:16px;line-height:2.1;padding-bottom:24px}
+.gallery-home .course-tabs{max-width:980px;margin:58px auto 0;border:0;border-bottom:1px solid var(--line)}
+.gallery-home .course-tabs button{padding:24px 30px;border-top:1px solid var(--line);text-align:center;min-height:104px}
+.gallery-home .course-tabs button+button{border-left:0}
+.gallery-home .course-tabs button[aria-selected=true]{background:#fff;box-shadow:inset 0 -2px var(--ink)}
+.gallery-home .course-tabs button>span{font-size:19px;letter-spacing:.1em}
+.gallery-home .course-tabs small{font-family:var(--sans);font-size:14px;color:var(--muted);line-height:2;margin-top:10px}
+.gallery-home .course-detail{max-width:1080px;margin:0 auto;grid-template-columns:1.2fr 1fr;gap:65px;padding:50px 0}
+.gallery-home .course-detail h3{font-size:28px;line-height:1.8;margin:20px 0;word-break:keep-all;overflow-wrap:anywhere}
+.gallery-home .course-detail>div>p:not(.eyebrow,.price){font-family:var(--sans);font-size:16px;line-height:2.1;max-width:32em}
+.gallery-home .course-right{padding-left:40px}
+.gallery-home .price{font-family:var(--sans);font-variant-numeric:tabular-nums;gap:10px}
+.gallery-home .price strong{font-size:62px;letter-spacing:-.04em}
+.gallery-home .price>span:first-child{font-size:24px}.gallery-home .price>span:last-child{font-size:14px}
+.gallery-home .course-right ul{font-family:var(--sans);font-size:16px;line-height:2.1;margin:26px 0}
+.gallery-home .course-right li:before{color:var(--muted)}
+.gallery-home .course-right .contact{font-size:15px;padding:16px 24px}
+.gallery-home .price-note{font-family:var(--sans);font-size:14px;line-height:2;color:var(--muted);max-width:1080px;margin:24px auto 0;font-variant-numeric:tabular-nums}
+.gallery-home .fee-details{max-width:1080px;margin:28px auto 15px}
+.gallery-home .fee-list{font-family:var(--sans);font-variant-numeric:tabular-nums}
+.gallery-home .fee-list>div{font-size:16px;padding:21px 0;grid-template-columns:1fr 1fr}
+.gallery-home .fee-list small{font-size:14px}
+.gallery-home .fee-discount{font-family:var(--sans);font-size:16px;line-height:2.1}
+.gallery-home .courses>.text-link{display:flex;justify-content:center;margin-top:26px}
+.gallery-home .service-rows{margin-top:55px}
+.gallery-home .service-row{grid-template-columns:40px minmax(0,1.1fr) minmax(0,1.2fr);gap:35px;padding:36px 0}
+.gallery-home .service-row h3{font-size:25px;line-height:1.8}
+.gallery-home .campus-grid{max-width:1080px;margin:55px auto 0;gap:70px;border:0}
+.gallery-home .campus-item,.gallery-home .campus-item+article{border:0;border-top:1px solid var(--line);padding:32px 0}
+.gallery-home .campus-item h3{font-size:34px;margin:22px 0 28px}
+.gallery-home .hours{font-family:var(--sans);font-size:16px;font-variant-numeric:tabular-nums;margin-bottom:20px}
+.gallery-home .hours>div{grid-template-columns:120px minmax(0,1fr);gap:15px}.gallery-home .hours>div+div{margin-top:14px}
+.gallery-home .campus-item .text-link{font-size:16px}
+.gallery-home .closing{background:#fff;padding-top:125px;padding-bottom:135px}
+.gallery-home .closing h2{margin:32px 0 30px}
+.gallery-home .closing p:not(.section-label){font-family:var(--sans);font-size:16px;line-height:2.2}
+.gallery-home .closing .closing-reassurance{font-size:16px;margin-top:20px}
+.gallery-home .contact-large{font-size:16px;min-width:350px;padding:19px 30px;margin-top:35px}
+.gallery-home .closing .closing-meta{font-size:14px;margin-top:26px}
+.gallery-home .footer{margin-left:0;padding:65px 6% 40px;display:flex;flex-direction:column;gap:30px;border-top:1px solid var(--line)}
+.gallery-home .footer .brand{text-align:center;font-size:36px}
+.gallery-home .footer nav{gap:16px 30px;font-size:15px;text-align:center}
+.gallery-home .footer small{font-family:var(--sans);font-size:12px}
+.gallery-home .back-top{right:5%;bottom:40px;font-family:var(--sans)}
+.gallery-home .side-rail{position:static;display:flex;flex-direction:row;justify-content:center;inset:auto;width:auto;border:0;padding:0;background:none;z-index:auto}
+.gallery-home .rail-number,.gallery-home .rail-rule,.gallery-home .rail-caption{display:none}
+.gallery-home .rail-note-trigger{width:auto;min-height:44px;flex-direction:row;align-items:center;gap:16px;margin:0;padding:8px 12px}
+.gallery-home .rail-word,.gallery-home .rail-static{font-size:20px;writing-mode:horizontal-tb;margin:0}
+.gallery-home .rail-touch{font-size:10px;writing-mode:horizontal-tb;margin:0;color:var(--muted)}
+.gallery-home .rail-note-trigger:hover .rail-word{color:var(--muted)}
+.gallery-home .skip-link{left:16px}
+.gallery-home .hero-description,.gallery-home .closing h2{word-break:keep-all;overflow-wrap:anywhere}
+.gallery-home.js-motion .reveal{transition:opacity 1s var(--ease),transform 1s var(--ease);transform:translateY(14px)}
+.gallery-home.js-motion .reveal.visible{transform:none}
+@keyframes gallery-photo-open{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@keyframes gallery-photo-settle{from{transform:scale(1.025)}to{transform:scale(1)}}
+.gallery-home summary>span{font-size:0}
+.gallery-home summary>span:before{content:'＋';font-size:16px}
+.gallery-home details[open]>summary>span:before{content:'−'}
+@media(max-width:1279px) and (min-width:901px){.gallery-home .desktop-nav{display:flex;gap:24px;font-size:14px}.gallery-home.js .menu-button{display:none}.gallery-home .section{padding-inline:7%}.gallery-home .support-rows{margin-left:0}.gallery-home .support-row{grid-template-columns:70px 1fr 1.1fr;gap:25px}.gallery-home .course-detail{gap:38px}.gallery-home .course-right{padding-left:30px}.gallery-home .price strong{font-size:54px}.gallery-home .campus-grid{gap:45px}}
+@media(max-width:900px){.gallery-home .header{height:100px;padding:22px 5%;display:grid;grid-template-columns:minmax(0,1fr) auto 48px;grid-template-rows:1fr;gap:16px}.gallery-home .header>.brand{grid-column:1;grid-row:1;text-align:left;font-size:30px;justify-self:start}.gallery-home .desktop-nav{display:none}.gallery-home .header-contact{display:inline-flex;position:static;grid-column:2;grid-row:1;padding:12px 20px;min-height:48px;font-size:13px}.gallery-home .header-contact svg{display:none}.gallery-home.js .menu-button{grid-column:3;grid-row:1;display:flex;justify-content:center;align-items:center;padding:12px 0;min-width:48px;min-height:48px;font-size:0;background:none;border:0;gap:0}.gallery-home .menu-lines{width:24px;height:10px}.gallery-home .menu-lines:before,.gallery-home .menu-lines:after{background:var(--ink)}.gallery-home .mobile-nav{left:0;top:100px;max-height:calc(100svh - 100px);padding:20px 6% 32px;box-shadow:none;border-bottom:1px solid var(--line)}.gallery-home .mobile-nav>a:not(.contact){min-height:52px;font-size:17px;padding:16px 0}.gallery-home .mobile-nav small{color:var(--muted)}.gallery-home .mobile-nav .contact{font-size:16px;margin-top:24px}.gallery-home .hero{padding-top:48px}.gallery-home .hero-description{font-size:21px}.gallery-home .section{padding-inline:7%}.gallery-home .support .section-top{grid-template-columns:.55fr 1fr;gap:0 6%}.gallery-home .support-rows{margin-left:0}.gallery-home .support-row{grid-template-columns:45px 1fr 1.1fr;gap:22px}.gallery-home .teacher-copy{width:72%}.gallery-home .course-detail{gap:30px}.gallery-home .course-right{padding-left:25px}.gallery-home .price strong{font-size:49px}.gallery-home .campus-grid{gap:35px}.gallery-home .hours>div{grid-template-columns:1fr;gap:0}.gallery-home .hours dd{margin-top:4px}.gallery-home:not(.js) .desktop-nav{display:flex;position:static;grid-column:1/-1;grid-row:2;flex-wrap:wrap;gap:12px 20px;font-size:15px}.gallery-home:not(.js) .header{height:auto;min-height:100px;grid-template-rows:auto auto}}
+@media(max-width:760px){.gallery-home .header{height:90px;padding:18px 22px;gap:12px;grid-template-columns:minmax(0,1fr) auto 44px}.gallery-home .header>.brand{font-size:27px;letter-spacing:-1px}.gallery-home .header .brand span{font-size:9px;margin-top:8px}.gallery-home .header-contact{font-size:12px;padding:11px 18px;min-height:46px;white-space:nowrap}.gallery-home.js .menu-button{min-width:44px;min-height:46px}.gallery-home .menu-lines{width:22px}.gallery-home .mobile-nav{top:90px;max-height:calc(100svh - 90px);padding-inline:22px}.gallery-home .hero{padding:42px 22px 0}.gallery-home .hero>.eyebrow{font-size:10px;margin-bottom:22px;letter-spacing:.13em}.gallery-home .hero h1{font-size:clamp(36px,9vw,58px);line-height:1.65;letter-spacing:.035em;white-space:nowrap}.gallery-home .hero-side{margin:24px 0 42px;align-items:center;padding:0}.gallery-home .hero-description{font-size:20px;line-height:2;letter-spacing:.025em;max-width:25em;word-break:normal;overflow-wrap:anywhere}.gallery-home .hero-detail{font-size:16px;margin-top:18px;line-height:2}.gallery-home .hero-actions{flex-direction:column;gap:13px;margin-top:25px;align-items:center;width:auto}.gallery-home .hero-actions .contact{width:auto;min-height:52px;font-size:15px;padding:14px 24px}.gallery-home .hero-actions>.text-link{align-self:center;font-size:15px}.gallery-home .hero-photo picture{aspect-ratio:4/3}.gallery-home .hero-photo img{object-position:center}.gallery-home .hero-photo figcaption{font-size:13px;margin-top:15px;letter-spacing:.025em}.gallery-home .hero-bottom{padding:18px 0 28px;flex-direction:column;align-items:flex-start;gap:12px;font-size:12px}.gallery-home .hero-bottom .scroll{display:none}.gallery-home .section{padding:80px 24px}.gallery-home h2{font-size:clamp(27px,6.8vw,38px);line-height:1.9;letter-spacing:.035em}.gallery-home .section-label{font-size:11px;gap:12px}.gallery-home .section-label>span{font-size:11px}.gallery-home .section-top .section-label{margin-bottom:26px}.gallery-home .section-top h2 br,.gallery-home .teacher-header h2 br{display:block}.gallery-home .section-top>p{font-size:16px;margin-top:25px;line-height:2.1}.gallery-home .support .section-top{display:flex;text-align:left;align-items:flex-start}.gallery-home .support .section-top .section-label{margin-top:0;margin-bottom:26px}.gallery-home .support .section-top h2{max-width:none}.gallery-home .support .section-top>p{margin-top:25px;max-width:30em}.gallery-home .support-rows{margin:38px 0 0}.gallery-home .support-row{grid-template-columns:26px minmax(0,1fr);gap:14px 16px;padding:30px 0}.gallery-home .row-number{grid-row:1/3}.gallery-home .row-number>p{display:none}.gallery-home .support-row h3{font-size:23px;line-height:1.8}.gallery-home .row-body>p,.gallery-home .service-row>div>p{font-size:16px;line-height:2.1}.gallery-home .row-body .meta,.gallery-home .service-row .meta{font-size:14px;margin-top:16px;line-height:2}.gallery-home .row-body .text-link,.gallery-home .service-row .text-link{font-size:15px;margin-top:12px;gap:18px}.gallery-home .teacher-header .section-label{margin-bottom:26px}.gallery-home .teacher-layout{margin-top:36px}.gallery-home .teacher-photo{aspect-ratio:4/3}.gallery-home .teacher-photo img{object-position:center}.gallery-home .teacher-copy{width:100%;max-width:none;margin:32px 0 0;padding:0}.gallery-home .teacher-count{font-size:15px!important;gap:18px;margin-bottom:24px}.gallery-home .teacher-count>span{font-size:53px}.gallery-home .teacher-count small{font-size:25px}.gallery-home .teacher-copy>p{font-size:16px;line-height:2.1}.gallery-home .teacher-copy>.text-link{margin-top:22px}.gallery-home summary{font-size:15px;line-height:2;gap:14px;padding:20px 0}.gallery-home .story>p{font-size:16px}.gallery-home .course-tabs{margin-top:38px}.gallery-home .course-tabs button{padding:19px 9px;min-height:112px}.gallery-home .course-tabs button>span{font-size:clamp(12px,3.4vw,18px);letter-spacing:.02em}.gallery-home .course-tabs small{font-size:13px;line-height:1.9;margin-top:12px}.gallery-home .course-detail{display:block;padding:34px 0}.gallery-home .course-detail h3{font-size:25px;line-height:1.9;margin:18px 0}.gallery-home .course-detail>div>p:not(.eyebrow,.price){font-size:16px;line-height:2.1}.gallery-home .course-right{padding:30px 0 0;border:0}.gallery-home .price strong{font-size:54px}.gallery-home .price>span:first-child{font-size:22px}.gallery-home .price>span:last-child{font-size:13px}.gallery-home .course-right ul{font-size:16px;line-height:2.1;margin:24px 0}.gallery-home .course-right .contact{font-size:14px;padding:15px 21px;gap:16px;width:auto}.gallery-home .price-note{font-size:14px;margin-top:22px;line-height:2}.gallery-home .fee-details{margin-top:25px}.gallery-home .fee-list>div{grid-template-columns:1fr;gap:7px;padding:20px 0;font-size:16px}.gallery-home .fee-list dd{padding:0}.gallery-home .fee-list small{font-size:14px}.gallery-home .fee-discount{font-size:16px;line-height:2.1}.gallery-home .courses>.text-link{font-size:15px;margin-top:22px}.gallery-home .service-rows{margin-top:36px}.gallery-home .service-row{grid-template-columns:25px minmax(0,1fr);gap:14px 16px;padding:30px 0}.gallery-home .service-row h3{font-size:24px}.gallery-home .service-number{font-size:12px;grid-row:1/3}.gallery-home .campus-grid{display:block;margin-top:36px}.gallery-home .campus-item,.gallery-home .campus-item+article{padding:30px 0}.gallery-home .campus-item h3{font-size:31px;margin:21px 0 25px}.gallery-home .hours{font-size:16px;margin-bottom:20px}.gallery-home .hours>div{grid-template-columns:116px minmax(0,1fr);gap:10px}.gallery-home .hours dd{margin:0}.gallery-home .campus-item .text-link{font-size:15px}.gallery-home .closing{padding-top:85px;padding-bottom:95px}.gallery-home .closing h2{font-size:clamp(26px,6.6vw,36px);margin:28px 0}.gallery-home .closing p:not(.section-label){font-size:16px;line-height:2.1}.gallery-home .closing .closing-reassurance{font-size:16px}.gallery-home .contact-large{min-width:0;width:auto;font-size:14px;padding:17px 22px;gap:16px;margin-top:30px}.gallery-home .closing .closing-meta{font-size:14px;margin-top:24px}.gallery-home .footer{padding:48px 24px 34px;gap:27px}.gallery-home .footer .brand{font-size:32px}.gallery-home .footer nav{gap:16px 23px;font-size:15px}.gallery-home .footer small{font-size:12px}.gallery-home .back-top{position:static;padding:8px 16px;font-size:20px;order:5}.gallery-home .rail-note-trigger{padding:10px 14px;min-height:48px}.gallery-home .rail-word{font-size:20px}.gallery-home .rail-touch{font-size:10px}}
+@media(max-width:360px){.gallery-home .header{padding-inline:16px;gap:6px}.gallery-home .header>.brand{font-size:23px}.gallery-home .header-contact{font-size:11px;padding-inline:14px}.gallery-home .hero{padding-inline:18px}.gallery-home .hero h1{font-size:9vw}.gallery-home .hero-description{font-size:19px}.gallery-home .section{padding-inline:20px}.gallery-home .support-row,.gallery-home .service-row{column-gap:12px}.gallery-home .support-row h3{font-size:21px}.gallery-home .row-body .text-link,.gallery-home .service-row .text-link{font-size:14px;gap:13px}.gallery-home .course-tabs button{padding-inline:6px}.gallery-home .course-tabs small{font-size:12px}.gallery-home .course-detail h3{font-size:23px}.gallery-home .price strong{font-size:49px}.gallery-home .hours>div{grid-template-columns:1fr;gap:0}.gallery-home .hours dd{margin-top:3px}.gallery-home .contact-large{font-size:13px;padding-inline:18px;gap:12px}.gallery-home .service-row h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.gallery-home .hero-photo picture,.gallery-home .hero-photo img{animation:none;clip-path:none;transform:none}.gallery-home.js-motion .reveal{opacity:1;transform:none;transition:none}}
+@media(min-width:761px){.gallery-home .support-row{grid-template-columns:100px minmax(0,1fr) minmax(0,1.1fr)}}
+
+/* 写真は余白の中に収め、人物と文章を同じ強さで見せる。 */
+.gallery-home .hero-photo,.gallery-home .hero-bottom{max-width:1040px}
+.gallery-home .hero-photo picture{aspect-ratio:1.8}
+.gallery-home .teacher-photo{max-width:840px;margin-inline:auto}
+
+/* ノートは明朝体の字面と行頭を揃える。筆記の開示アニメーションは共用。 */
+.gallery-home .note-row>span{font-family:var(--font);font-weight:500;letter-spacing:.025em;font-style:normal;transform:none}
+.gallery-home .note-signature>span{font-weight:500;font-style:normal}
+
+/* 章の名前を見出しとして読める大きさにし、本文との階層を明確にする。 */
+.gallery-home .section .section-label{font-family:var(--font);font-size:25px;font-weight:500;letter-spacing:.06em;color:var(--ink);line-height:1.6;gap:20px}
+.gallery-home .section-label>span{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.gallery-home h2{font-size:clamp(38px,3.8vw,54px);font-weight:500;line-height:1.65;letter-spacing:.035em}
+.gallery-home .section-top h2 br,.gallery-home .teacher-header h2 br{display:block}
+.gallery-home .support .section-top{grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr)}
+.gallery-home .support .section-top .section-label{margin-top:14px}
+.gallery-home .teacher-count{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:24px;margin:32px 0 0;color:var(--ink);line-height:1.2}
+.gallery-home .teacher-count>.teacher-count-label{font-family:var(--font);font-size:27px;font-weight:500;letter-spacing:.08em}
+.gallery-home .teacher-count>.teacher-count-value{font-family:var(--sans);font-size:112px;font-weight:500;letter-spacing:-.04em}
+.gallery-home .teacher-count small{font-family:var(--font);font-size:29px;letter-spacing:.04em;margin-left:12px}
+.gallery-home .teacher-layout{margin-top:40px}
+.gallery-home .teacher-header h2{word-break:keep-all;overflow-wrap:anywhere}
+.gallery-home .support-row h3,.gallery-home .service-row h3{font-size:27px;font-weight:500}
+.gallery-home .closing h2{font-size:clamp(38px,3.8vw,54px)}
+@media(max-width:760px){
+ .gallery-home .hero-photo,.gallery-home .hero-bottom{width:92%}
+ .gallery-home .hero-photo picture{aspect-ratio:4/3}
+ .gallery-home .teacher-photo{width:92%}
+ .gallery-home .note-row>span{letter-spacing:0}
+ .gallery-home .section .section-label{font-size:21px;gap:14px;letter-spacing:.035em}
+ .gallery-home .section-label>span{font-size:13px}
+ .gallery-home h2,.gallery-home .closing h2{font-size:clamp(29px,7.8vw,38px);line-height:1.75;letter-spacing:.02em}
+ .gallery-home .support .section-top .section-label{margin-top:0}
+ .gallery-home .teacher-count{gap:16px;margin:28px 0 0}
+ .gallery-home .teacher-count>.teacher-count-label{font-size:21px}
+ .gallery-home .teacher-count>.teacher-count-value{font-size:88px}
+ .gallery-home .teacher-count small{font-size:23px;margin-left:9px}
+ .gallery-home .teacher-layout{margin-top:32px}
+ .gallery-home .support-row h3,.gallery-home .service-row h3{font-size:24px}
+}
+
+/* 冒頭は塾の紹介、01は具体的なサポート。写真は紹介文に並べる。 */
+.gallery-home .hero-side{margin-bottom:42px}
+.gallery-home .hero-overview{order:3;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:64px;align-items:center;width:100%;max-width:980px}
+.gallery-home .hero-overview .hero-photo{width:100%;max-width:440px;order:initial}
+.gallery-home .hero-overview .hero-photo picture{aspect-ratio:4/3}
+.gallery-home .hero-about h2{font-size:30px;line-height:1.6;letter-spacing:.025em;margin-bottom:24px}
+.gallery-home .about-lead{font-family:var(--font);font-size:25px;font-weight:500;line-height:1.9;color:var(--ink);max-width:18em;word-break:keep-all;overflow-wrap:anywhere}
+.gallery-home .support .section-label{word-break:keep-all;overflow-wrap:normal}
+.gallery-home .about-body{font-family:var(--sans);font-size:16px;line-height:2.1;color:var(--muted);margin-top:20px}
+.gallery-home .hero-about .text-link{margin-top:15px;font-size:15px}
+.gallery-home .hero-bottom{max-width:980px;margin-top:12px}
+.gallery-home .campus-access{font-family:var(--sans);font-size:16px;color:var(--muted);line-height:2;margin:-10px 0 25px}
+.gallery-home .campus .hours>div{grid-template-columns:160px minmax(0,1fr)}
+@media(min-width:761px) and (max-width:1100px){
+ .gallery-home .hero-overview{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:35px}
+ .gallery-home .hero-about h2{font-size:26px}
+ .gallery-home .about-lead{font-size:23px}
+ .gallery-home .campus .hours>div{grid-template-columns:1fr;gap:3px}
+}
+@media(min-width:1101px){
+ .gallery-home .hero{padding-top:30px}
+ .gallery-home .hero>.eyebrow{margin-bottom:20px}
+ .gallery-home .hero h1{line-height:1.45}
+ .gallery-home .hero-side{margin-top:20px;margin-bottom:34px}
+ .gallery-home .hero-detail br{display:none}
+}
+@media(max-width:760px){
+ .gallery-home .hero-side{margin-bottom:32px}
+ .gallery-home .hero-overview{display:flex;flex-direction:column;gap:30px;align-items:center}
+ .gallery-home .hero-about{order:0;width:100%}
+ .gallery-home .hero-about h2{font-size:26px;text-align:center;margin-bottom:20px}
+ .gallery-home .about-lead{font-size:23px;max-width:18em;margin-inline:auto;text-align:center}
+ .gallery-home .about-body{font-size:16px;margin-top:20px}
+ .gallery-home .hero-about .text-link{display:flex;justify-content:center;font-size:14px}
+ .gallery-home .hero-overview .hero-photo{order:1;width:86%;max-width:360px}
+ .gallery-home .hero-bottom{width:100%;margin-top:8px}
+ .gallery-home .campus-access{font-size:15px;margin-bottom:22px}
+ .gallery-home .campus .hours>div{grid-template-columns:1fr;gap:2px}
+}
+@media(max-width:360px){
+ .gallery-home .hero-about h2{font-size:23px}
+ .gallery-home .about-lead{font-size:21px}
+}
+
+/* 温かみのあるベージュで面を統一。補助文字はコントラストを保つ濃さにする。 */
+.gallery-home .header,.gallery-home .mobile-nav,.gallery-home .teacher-photo,.gallery-home .course-tabs button[aria-selected=true],.gallery-home .closing,.gallery-home .message-note,.gallery-home .skip-link{background:var(--paper)}
+
+/* 実際の面談風景を、学習マネジメントの説明と一緒に掲載する。 */
+.gallery-home .management-meeting-photo{width:100%;max-width:440px;margin:26px 0 0;min-width:0}
+.gallery-home .management-meeting-photo picture{display:block}
+.gallery-home .management-meeting-photo img{display:block;width:100%;height:auto}
+.gallery-home .management-meeting-photo figcaption{font-family:var(--sans);font-size:13px;line-height:1.8;color:var(--muted);margin-top:12px}
+.gallery-home .support-topic{min-width:0}
+.gallery-features .feature-management>.management-meeting-photo{margin:38px auto 0}
+@media(max-width:760px){.gallery-home .support-topic .management-meeting-photo{margin-top:20px}.gallery-features .feature-management>.management-meeting-photo{margin-top:28px}}
+
+/* 集合ビジュアルは元の横長比率を保ち、全員を表示する。 */
+.gallery-home figure.instructor-team{width:100%;max-width:1120px;height:auto;aspect-ratio:auto;margin:0 auto;overflow:visible;background:transparent}
+.gallery-home figure.instructor-team picture{display:block;width:100%;height:auto;aspect-ratio:auto;overflow:hidden}
+.gallery-home figure.instructor-team img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;transform:none;animation:none}
+.gallery-home figure.instructor-team figcaption{position:static;font-family:var(--sans);font-size:13px;line-height:1.8;color:var(--muted);margin:14px 0 0;letter-spacing:.025em}
+.gallery-home .teachers .teacher-copy{max-width:620px}
+@media(max-width:760px){.gallery-home figure.instructor-team figcaption{font-size:12px;margin-top:11px}}
+
+/* 落ち着いた集合ビジュアルと、サービスの中身を示す小さな案内。 */
+.gallery-home figure.instructor-team figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px 24px;padding:16px 0 0;margin-top:18px;border-top:1px solid #d9d0c3}
+.gallery-home .instructor-team-label{font-family:var(--sans);font-size:10px;line-height:1.8;letter-spacing:.18em;color:var(--muted)}
+.instructor-support-summary{max-width:1120px;margin:34px auto 0}
+.instructor-support-summary ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;padding:0;margin:0}
+.instructor-support-summary li{min-width:0;padding:8px 0 20px;border-bottom:1px solid #d9d0c3}
+.instructor-support-summary li>span{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:10px}
+.instructor-support-summary strong{display:block;font-family:var(--font);font-size:clamp(17px,1.6vw,22px);font-weight:500;line-height:1.8;color:var(--ink)}
+.instructor-support-summary>p{font-family:var(--sans);font-size:13px;line-height:1.9;color:var(--muted);margin:16px 0 0}
+@media(max-width:760px){
+ .gallery-home figure.instructor-team figcaption{display:block;padding-top:13px;margin-top:15px}
+ .gallery-home .instructor-team-label{display:block;font-size:9px;letter-spacing:.14em;margin-bottom:5px}
+ .instructor-support-summary{margin-top:24px}
+ .instructor-support-summary ul{grid-template-columns:1fr;gap:0}
+ .instructor-support-summary li{display:grid;grid-template-columns:8em minmax(0,1fr);gap:14px;padding:17px 0;align-items:baseline}
+ .instructor-support-summary li>span{font-size:12px;margin:0}
+ .instructor-support-summary strong{font-size:17px}
+ .instructor-support-summary>p{font-size:12px;margin-top:13px}
+}

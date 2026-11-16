@@ -1,0 +1,23 @@
+/* 淡いミントと、文字だけが浮き上がる白いCTA。 */
+:root {
+  --brand: #B7DCD4;
+  --brand-dark: #4A857C;
+  --cta-background: var(--paper);
+  --cta-ink: var(--ink);
+  --ink: #111111;
+  --muted: #555555;
+  --paper: #FFFFFF;
+  --sand: #F9F8F6;
+  --tint: #F0F8F5;
+  --button-shadow: 0 6px 24px rgba(37,78,68,.12);
+  --cta-text-shadow-raised: 0 6px 9px rgba(37,78,68,.18);
+  --rule: #ddddda;
+  --serif: 'Shippori Mincho', 'Yu Mincho', YuMincho, serif;
+  --sans: var(--serif);
+  --latin: var(--serif);
+  --content-width: 1280px;
+  --gutter: clamp(24px, 6.25vw, 100px);
+  --section-space: clamp(88px, 11vw, 168px);
+  --header-height: 88px;
+  --ease: cubic-bezier(.2,.6,.35,1);
+}
